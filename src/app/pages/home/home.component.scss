@@ -1,0 +1,19 @@
+.tela {
+    display: flex;
+    flex-direction: column;
+    height: 100vh;
+    margin: 0;
+}
+
+app-header,
+app-apresentacao {
+    display: block;
+}
+
+
+.tela>app-apresentacao {
+    flex-grow: 1;
+    flex-shrink: 0;
+    flex-basis: auto;
+    min-height: 0;
+}
