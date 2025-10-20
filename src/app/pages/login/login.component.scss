@@ -1,0 +1,21 @@
+main{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+
+    section{
+        img{
+            width: 120px;
+            height: 100px;
+        }
+        display: flex;
+        justify-content: center;
+        flex-direction: column;
+        align-items: center;
+        gap: 15px;
+        padding: 20px;
+        background-color: #e1e8f034;
+        border: 1px solid #85838334;
+    }
+}

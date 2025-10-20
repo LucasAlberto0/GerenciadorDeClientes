@@ -10,7 +10,7 @@ section {
     justify-content: center;
     align-items: center;
     gap: 60px;
-    height: 95vh;
+    height: 92vh;
     overflow-y: auto;
 }
 
@@ -19,7 +19,6 @@ article {
     justify-content: center;
     flex-direction: column;
     gap: 25px;
-
     button {
         width: fit-content;
         border-radius: 20px;
@@ -30,30 +29,24 @@ article {
         align-items: center;
         gap: 6px;
         border: none;
-
         a {
             text-decoration: none;
         }
     }
-
     h1 {
         font-size: 4rem;
         color: #111;
         line-height: normal;
     }
-
     span {
         color: #2BBDEE;
     }
-
     h3 {
         color: #49484879;
     }
-
     .grupo_button {
         display: flex;
         gap: 20px;
-
         button {
             background-color: #2BBDEE;
             color: #FFFAFA;
@@ -62,21 +55,17 @@ article {
             transition: all ease 0.4s;
             border: none;
             cursor: pointer;
-
             &:hover {
                 scale: 1.1;
                 background-color: #7ed3f0;
                 color: #FFFAFA;
             }
-
             &:hover a {
                 color: #FFFAFA;
             }
         }
-
         .button-custom {
             background-color: #FFFAFA;
-
             a {
                 color: #111;
             }
@@ -91,7 +80,6 @@ article {
     display: flex;
     flex-direction: column;
     gap: 20px;
-
     .box-branco-escurecido {
         display: flex;
         justify-content: space-between;
@@ -100,34 +88,28 @@ article {
         background-color: #bdd7f149;
         padding: 25px;
         border-radius: 15px;
-
         .box-img-e-p {
             display: flex;
             gap: 20px;
             white-space: nowrap;
-
             .p-secundario {
                 font-size: 0.8rem;
                 color: #494848b7;
             }
-
             .div-img {
                 background-color: #2BBDEE;
                 border-radius: 100%;
                 padding: 10px;
                 display: flex;
                 align-items: center;
-
                 img {
                     width: 30px;
                     height: 30px;
                 }
             }
-
             display: flex;
             align-items: center;
         }
-
         .div-img-check {
             img {
                 width: 30px;
@@ -140,23 +122,18 @@ article {
 @media(max-width: 1300px) {
     section {
         max-width: 900px;
-
         article {
             h1 {
                 font-size: 3.2rem;
             }
-
             h3 {
                 font-size: 1rem;
             }
         }
-
         .box-div-pai {
             padding: 25px;
-
             .box-branco-escurecido {
                 gap: 60px;
-
             }
         }
     }
@@ -193,7 +170,6 @@ article {
         }
         
     }
-
     .box-div-pai{
         .box-branco-escurecido{
                 padding: 15px;
@@ -201,30 +177,24 @@ article {
     }
     
     
-
 }
 
 @media(max-width: 768px) {
     section {
         max-width: 600px;
     }
-
     article {
         button {
             padding: 4px 10px;
         }
-
         h1 {
             font-size: 3rem;
         }
-
         h3 {
             font-size: 0.9rem;
         }
-
         .grupo_button {
             gap: 18px;
-
             button {
                 padding: 6px 20px;
             }
@@ -236,25 +206,20 @@ article {
     section {
         max-width: 490px;
     }
-
     article {
         button {
             padding: 4px 10px;
             font-size: 0.7rem;
         }
-
         h1 {
             font-size: 2rem;
         }
-
         h3 {
             font-size: 0.9rem;
             text-align: center;
         }
-
         .grupo_button {
             gap: 18px;
-
             button {
                 padding: 6px 20px;
             }
@@ -274,46 +239,37 @@ article {
             font-size: 0.8rem;
         }
     }
-
     .box-div-pai{
         padding: 4px;
     }
     }
-
 }
 
 @media(max-width: 400px) {
     section {
         max-width: 350px;
-
         .box-div-pai {
             padding: 5px;
-
             .box-branco-escurecido {
                 gap: 10px;
             }
         }
     }
-
     article {
         button {
             padding: 4px 10px;
             font-size: 0.6rem;
         }
-
         h1 {
             font-size: 1.7rem;
         }
-
         h3 {
             padding: 0px 5px;
             font-size: 0.6rem;
             text-align: center;
         }
-
         .grupo_button {
             gap: 18px;
-
             button {
                 padding: 6px 20px;
             }
@@ -326,19 +282,16 @@ article {
         max-width: 320px;
         .box-div-pai {
             padding: 0px;
-
             .box-branco-escurecido {
                 padding: 0px;
                 gap: 6px;
             }
         }
     }
-
     article {
         h1 {
             font-size: 1.5rem;
         }
-
         h3 {
             padding: 0px 5px;
             font-size: 0.6rem;
