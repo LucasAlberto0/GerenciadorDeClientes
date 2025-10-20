@@ -1,6 +1,7 @@
-import { Component, signal } from '@angular/core';
+import { isPlatformBrowser } from '@angular/common';
+import { Component, Inject, PLATFORM_ID, signal } from '@angular/core';
 import { RouterOutlet } from '@angular/router';
-
+import * as AOS from 'aos';
 @Component({
   selector: 'app-root',
   imports: [RouterOutlet],
@@ -9,4 +10,11 @@ import { RouterOutlet } from '@angular/router';
 })
 export class App {
   protected readonly title = signal('GerenciadorDeClientes');
+  constructor(@Inject(PLATFORM_ID) private platformId: Object) {}
+
+  ngOnInit(): void {
+    if (isPlatformBrowser(this.platformId)) {
+      AOS.init();
+    }
+  }
 }

@@ -1,0 +1,134 @@
+header {
+    width: auto;
+    display: flex;
+    justify-content: center;
+    padding: 10px 10px;
+    article {
+        max-width: 1200px;
+        width: 100%;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        color: #FFFAFA;
+        .logo-img{
+            width: 120px;
+            height: 60px;
+        }
+        .grupo-button{
+            display: flex;
+            justify-content: row;
+            gap: 25px;
+        }
+        .button-comecar{
+            background-color: #2BBDEE;
+            border-radius: 10px;
+            padding: 10px;
+            color: #FFFAFA;
+            transition: all ease 0.4s;
+            &:hover{
+                scale: 1.1;
+                background-color: #7ed3f0;
+            }
+        }
+
+        button {
+            color: #111;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            background-color: transparent;
+            border: none;
+            cursor: pointer;
+            font-size: 1rem;
+        }
+    }
+}
+
+@media(max-width: 1300px) {
+    header {
+        padding: 18px 18px;
+        article {
+            max-width: 900px;
+        }
+    }
+}
+
+@media(max-width: 1069px) {
+    header {
+        article {
+            max-width: 850px;
+            button {
+                font-size: 0.9rem;
+            }
+        }
+    }
+}
+
+@media(max-width: 991px) {
+    header {
+        article {
+            max-width: 700px;
+        }
+    }
+}
+
+@media(max-width: 768px) {
+    header {
+        padding: 15px 15px;
+        article {
+            max-width: 600px;
+            .logo-img{
+                width: 90px;
+                height: 40px;
+            }
+            button {
+                font-size: 0.8rem;
+            }
+        }
+    }
+}
+
+@media(max-width: 650px) {
+    header {
+        padding: 15px 15px;
+        article {
+            max-width: 490px;
+            button {
+                font-size: 0.7rem;
+                img {
+                    width: 20px;
+                    height: 20px;
+                }
+            }
+        }
+    }
+}
+
+@media(max-width: 550px){
+    header{
+        padding: 12px 10px;
+        article{
+            max-width: 390px;
+            .logo-img{
+                width: 80px;
+                height: 35px;
+            }
+        }
+    }
+}
+
+@media(max-width: 400px) {
+    header {
+        article {
+            max-width: 350px;
+        }
+    }
+}
+
+@media(max-width: 350px) {
+    header {
+        article {
+            max-width: 320px;
+        }
+    }
+}
