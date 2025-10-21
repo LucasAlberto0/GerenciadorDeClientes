@@ -10,7 +10,11 @@ import { Router } from '@angular/router';
 export class HeaderComponent {
   router = inject(Router);
 
-  NavegarRota() {
-    this.router.navigate(['login'])
+  NavegarCadastro() {
+    this.router.navigate(['cadastro']);
+  }
+
+  NavegarLogin() {
+    this.router.navigate(['login']);
   }
 }

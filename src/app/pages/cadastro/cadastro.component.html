@@ -1,0 +1,31 @@
+<main>
+    <form class="font-quando" data-aos="fade-right" data-aos-duration="1000">
+        <img src="img/logo.png" alt="">
+        <h1 class="font-quando-b">Cadastro</h1>
+        <div class="inputs">
+            <p-floatlabel variant="in">
+                <input pInputText id="in_label" autocomplete="off" />
+                <label for="in_label">Nome</label>
+            </p-floatlabel>
+            <p-floatlabel variant="in">
+                <input pInputText id="in_label" autocomplete="off" />
+                <label for="in_label">Email</label>
+            </p-floatlabel>
+
+            <p-floatlabel variant="in" >
+                <p-password  inputId="in_label" [toggleMask]="true"/>
+                <label for="in_label">Senha</label>
+                <ng-template #header>
+            <div class="font-semibold text-xm mb-4">Reset Password</div>
+        </ng-template>
+            </p-floatlabel>
+
+            <p-floatlabel variant="in">
+                <p-password [toggleMask]="true" [feedback]="false" class="input-custom" />
+                <label for="over_label">Repetir a senha</label>
+            </p-floatlabel>
+        </div>
+        <p-button label="Entrar" />
+        <a href="">Ainda não possui conta?</a>
+    </form>
+</main>

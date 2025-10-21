@@ -1,6 +1,7 @@
 import { isPlatformBrowser } from '@angular/common';
 import { Component, Inject, PLATFORM_ID, signal } from '@angular/core';
 import { RouterOutlet } from '@angular/router';
+import { $dt } from '@primeuix/themes';
 import * as AOS from 'aos';
 @Component({
   selector: 'app-root',
@@ -16,5 +17,7 @@ export class App {
     if (isPlatformBrowser(this.platformId)) {
       AOS.init();
     }
+
+    $dt('Cyan.50').value
   }
 }

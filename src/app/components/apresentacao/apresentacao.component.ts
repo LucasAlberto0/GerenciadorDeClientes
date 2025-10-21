@@ -11,6 +11,6 @@ export class ApresentacaoComponent {
   router = inject(Router);
 
   NavegarRota() {
-    this.router.navigate(['login']);
+    this.router.navigate(['cadastro']);
   }
 }
