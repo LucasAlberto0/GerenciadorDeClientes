@@ -1,20 +1,15 @@
-import { Component, inject } from '@angular/core';
+import { Component, inject, Input } from '@angular/core';
 import { Router } from '@angular/router';
+import { BotaoHeaderComponent } from "../botao-header/botao-header.component";
 
 @Component({
   selector: 'app-header',
-  imports: [],
+  imports: [BotaoHeaderComponent],
   templateUrl: './header.component.html',
   styleUrl: './header.component.scss'
 })
 export class HeaderComponent {
-  router = inject(Router);
-
-  NavegarCadastro() {
-    this.router.navigate(['cadastro']);
-  }
-
-  NavegarLogin() {
-    this.router.navigate(['login']);
-  }
+  @Input() textoBotao: string = 'Teste';
+  @Input() rotaBotao: string = '/cadastro';
+  @Input() localizacaoIcone: string = "img/icons/arrow-right-icon.svg"
 }

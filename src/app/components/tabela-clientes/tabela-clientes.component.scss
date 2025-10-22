@@ -7,59 +7,34 @@ section{
         border-radius: 20px;
         padding: 30px 20px;
         margin-bottom: 30px;
-        max-height: 500px;
         overflow-y: auto;
+        max-height: 500px;
         max-width: 1200px;
         width: 100%;
         background-color: #f8fdff;
-        border: 2px solid #7573732a;
+        border: 1px solid #7573732a;
+        box-shadow: 5px 5px #cccccc83;
+        .div-titulo-da-tabela{
+            display: flex;
+            justify-content: space-between;
+            gap: 10px;
+            align-items: center;
+        }
+        .div-cards{
+            margin-top: 25px;
+            display: flex;
+            flex-direction: row;
+            justify-content: center;
+            gap: 20px;
+            color: #111;
+            flex-wrap: wrap;
+        }
     }
     h2{
         color: #111;
     }
 }
 
-table {
-    margin-top: 10px;
-    width: 100%;
-    background-color: #f8fdff;
-    overflow-x: auto;
-    th{
-        text-align: center;
-        color: #111;
-    }
-    td{
-        text-align: center;
-        color: #111;
-        .grupo_button{
-            display: flex;
-            gap: 15px;
-            width: 100%;
-            justify-content: center;
-        button{
-            background-color: transparent;
-            border: none;
-            border-radius: 10px;
-            padding: 4px;
-            display: flex;
-            align-items: center;
-            transition: all ease 0.4s;
-            &:hover{
-                background-color: #612cb5;
-                cursor: pointer;
-            }
-        }
-    }
-    }
-    .mat-mdc-cell{
-        border-color: #fffafa2d;
-    }
-}
-
-div#container {
-    overflow-y: auto;
-    overflow-x: auto;
-}
 
 @media(max-width: 1300px) {
     section {
@@ -104,7 +79,7 @@ div#container {
 @media(max-width: 550px){
     section{
         article{
-            max-width: 350px;
+            max-width: 390px;
         }
     }
 }
@@ -112,7 +87,7 @@ div#container {
 @media(max-width: 400px) {
     section {
         article {
-            max-width: 310px;
+            max-width: 330px;
         }
     }
 }
@@ -120,6 +95,6 @@ div#container {
 @media(max-width: 350px) {
     section {
         article {
-            max-width: 290px;
+            max-width: 310px;
         }
     }}

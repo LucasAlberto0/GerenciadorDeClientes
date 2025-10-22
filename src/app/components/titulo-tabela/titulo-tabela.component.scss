@@ -10,10 +10,43 @@ section {
         align-items: start;
         width: 100%;
         max-width: 1200px;
+        gap: 20px;
 
-        h1 {
-            font-size: 2.6rem;
-            line-height: normal;
+        .titulo-e-subtitulo {
+            h1 {
+                font-size: 2.4rem;
+                line-height: normal;
+            }
+            p {
+                color: #494848cc;
+            }
+        }
+
+
+        .total-de-clientes {
+            background-color: #f8fdff;
+            padding: 20px;
+            display: flex;
+            gap: 20px;
+            width: 300px;
+            border-radius: 15px;
+            align-items: center;
+            border: 1px solid #7573732a;
+            box-shadow: 5px 5px #cccccc83;
+
+            img {
+                width: 45px;
+                height: 45px;
+            }
+
+            h2 {
+                font-size: 2rem;
+                line-height: normal;
+            }
+
+            h3 {
+                color: #494848cc;
+            }
         }
     }
 }
@@ -31,11 +64,29 @@ section {
     section {
         article {
             max-width: 850px;
-            h1{
-                font-size: 2.3rem;
+
+            h1 {
+                font-size: 2.2rem;
+            }
+
+            .total-de-clientes {
+            padding: 16px;
+            width: 300px;
+            img {
+                width: 40px;
+                height: 40px;
+            }
+
+            h2 {
+                font-size: 1.8rem;
+            }
+
+            h3 {
+                color: #494848cc;
             }
         }
     }
+}
 }
 
 @media (max-width: 991px) {
@@ -50,9 +101,11 @@ section {
     section {
         article {
             max-width: 600px;
-            h1{
+.titulo-e-subtitulo{
+            h1 {
                 font-size: 2.1rem;
             }
+        }
         }
     }
 }
@@ -69,12 +122,32 @@ section {
     section {
         article {
             max-width: 380px;
-            h1{
-                font-size: 1.8rem;
+            .titulo-e-subtitulo{
+            h1 {
+                font-size: 1.6rem;
             }
-            p{
+
+            p {
                 font-size: 0.7rem;
             }
+        }
+            .total-de-clientes {
+            padding: 16px;
+            width: 250px;
+            padding: 10px;
+            img {
+                width: 35px;
+                height: 35px;
+            }
+
+            h2 {
+                font-size: 1.5rem;
+            }
+
+            h3 {
+                font-size: 0.9rem;
+            }
+        }
         }
     }
 }
@@ -83,12 +156,15 @@ section {
     section {
         article {
             max-width: 330px;
-            h1{
+            .titulo-e-subtitulo{
+            h1 {
                 font-size: 1.6rem;
             }
-            p{
+
+            p {
                 font-size: 0.6rem;
             }
+        }
         }
     }
 }

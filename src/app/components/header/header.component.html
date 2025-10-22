@@ -1,11 +1,11 @@
 <header class="bg-branco-1">
     <article>
         <div data-aos="fade-right" data-aos-duration="1000">
-            <img src="img/logo.png" class="logo-img" alt="">
+            <a href="/"> <img src="img/logo.png" class="logo-img" alt=""></a>
         </div>
         <div class="grupo-button font-quando" data-aos="fade-left" data-aos-duration="1000">
-            <button class="font-quando" (click)="NavegarLogin()">Entrar</button>
-            <button class="font-quando bg-azul button-comecar" (click)="NavegarCadastro()">Começar Grátis <img src="img/icons/arrow-right-icon.svg" alt=""></button>
+            <!-- <button class="font-quando" (click)="NavegarLogin()" >Entrar</button> -->
+            <app-botao-header [texto]="textoBotao" [rota]="rotaBotao" [icone]="localizacaoIcone"/>
         </div>
     </article>
 </header>

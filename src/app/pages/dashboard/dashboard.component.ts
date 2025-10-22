@@ -1,7 +1,9 @@
-import { Component } from '@angular/core';
+import { Component, inject } from '@angular/core';
 import { HeaderComponent } from "../../components/header/header.component";
 import { TabelaClientesComponent } from "../../components/tabela-clientes/tabela-clientes.component";
 import { TituloTabelaComponent } from "../../components/titulo-tabela/titulo-tabela.component";
+import { Router } from '@angular/router';
+import { BotaoHeaderComponent } from "../../components/botao-header/botao-header.component";
 
 @Component({
   selector: 'app-dashboard',
@@ -10,5 +12,9 @@ import { TituloTabelaComponent } from "../../components/titulo-tabela/titulo-tab
   styleUrl: './dashboard.component.scss'
 })
 export class DashboardComponent {
+  router = inject(Router);
 
+  NavegarHome(){
+    this.router.navigate(['/']);
+  }
 }

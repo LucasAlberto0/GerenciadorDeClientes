@@ -1,0 +1,102 @@
+article {
+    padding: 30px 20px;
+    border: 1px solid #7573732a;
+    border-top: 4px solid #2bbdee;
+    border-radius: 10px;
+    display: flex;
+    flex-direction: column;
+    gap: 18px;
+    min-width: 350px;
+
+    .titulo-empresa {
+        color: rgb(83, 78, 78);
+        display: flex;
+        align-items: center;
+        gap: 3px;
+
+        img {
+            width: 20px;
+            height: 20px;
+        }
+    }
+
+
+    aside {
+        display: flex;
+        flex-direction: column;
+        gap: 10px;
+
+
+        .div-campo {
+            display: flex;
+            align-items: center;
+            gap: 7px;
+            color: rgb(83, 78, 78);
+
+            .fundo-img {
+                padding: 5px;
+                background-color: rgba(199, 193, 193, 0.164);
+                border-radius: 10px;
+                display: flex;
+                align-items: center;
+
+                img {
+                    width: 20px;
+                    height: 20px;
+                }
+            }
+        }
+
+        .div-button {
+            display: flex;
+            gap: 6px;
+            border-top: 1px solid #7573732a;
+            padding-top: 14px;
+
+            button {
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                gap: 6px;
+                width: 100%;
+                background-color: transparent;
+                padding: 5px;
+                border-radius: 7px;
+                border: 1px solid #7573732a;
+                transition: all ease 0.4s;
+
+                &:hover img {
+                    filter: invert(0) brightness(1);
+                }
+
+                img {
+                    filter: invert(1) brightness(0);
+                    width: 20px;
+                    height: 20px;
+                    transition: all ease 0.3s;
+                }
+            }
+
+            .button-excluir {
+                &:hover {
+                    background-color: red;
+                    color: #f8fdff;
+                }
+            }
+
+            .button-editar {
+                &:hover {
+                    background-color: #2bbdee;
+                    color: #f8fdff;
+                }
+            }
+
+        }
+    }
+}
+
+@media (max-width: 400px){
+    article{
+        min-width: 280px;
+    }
+}
