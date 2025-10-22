@@ -14,6 +14,9 @@ main {
         background-color: #4992e617;
         border: 1px solid #85838334;
         border-radius: 10px;
+        max-width: 500px;
+        width: 100%;
+
         h1 {
             color: #111;
         }
@@ -26,6 +29,7 @@ main {
             height: 90px;
         }
         .inputs {
+            width: 100%;
             display: flex;
             flex-direction: column;
             gap: 5px;
@@ -44,3 +48,63 @@ main {
 }
 
 
+.botao-cadastro {
+    display: block;
+    width: 100%;
+}
+
+.botao-cadastro ::ng-deep .p-button {
+    width: 100%;
+    background-color: #2bbdee;
+    border-radius: 10px;
+    font-size: 1.1rem;
+    padding: 0.8rem;
+}
+
+p-inputtext,
+p-password {
+    display: block;
+    width: 100%;
+}
+
+p-inputtext ::ng-deep .p-inputtext,
+p-password ::ng-deep .p-inputtext {
+    width: 100%;
+    border-radius: 8px;
+    border: 1px solid #ccc;
+    background-color: #f9f9f9;
+    font-size: 0.8rem;
+    transition: border-color 0.3s;
+}
+
+p-inputtext ::ng-deep .p-inputtext:focus,
+p-password ::ng-deep .p-inputtext:focus {
+    border-color: #2bbdee;
+    box-shadow: 0 0 0 2px rgba(43, 189, 238, 0.2);
+}
+
+p-floatlabel {
+    display: block;
+    width: 100%;
+}
+
+p-floatlabel ::ng-deep input.p-inputtext,
+p-floatlabel ::ng-deep .p-password-input {
+    width: 100% !important;
+    box-sizing: border-box;
+}
+
+p-floatlabel ::ng-deep input.p-inputtext,
+p-password ::ng-deep .p-inputtext {
+    border-radius: 8px;
+    border: 1px solid #ccc;
+    background-color: #f9f9f9;
+    font-size: 1rem;
+    transition: border-color 0.3s;
+}
+
+p-floatlabel ::ng-deep input.p-inputtext:focus,
+p-password ::ng-deep .p-inputtext:focus {
+    border-color: #2bbdee;
+    box-shadow: 0 0 0 2px rgba(43, 189, 238, 0.2);
+}
