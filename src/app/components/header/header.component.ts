@@ -1,10 +1,10 @@
 import { Component, inject, Input } from '@angular/core';
 import { Router } from '@angular/router';
-import { BotaoHeaderComponent } from "../botao-header/botao-header.component";
+import { BotaoAzulComponent } from "../botao-azul/botao-azul.component";
 
 @Component({
   selector: 'app-header',
-  imports: [BotaoHeaderComponent],
+  imports: [BotaoAzulComponent],
   templateUrl: './header.component.html',
   styleUrl: './header.component.scss'
 })

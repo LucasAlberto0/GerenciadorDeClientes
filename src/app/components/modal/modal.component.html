@@ -1,0 +1,27 @@
+<form class="font-quando form-container" >
+    <div>
+        <h2 class="font-quando-b" mat-dialog-title>Cadastrar Cliente</h2>
+        <p>Preencha os dados do cliente abaixo</p>
+    </div>
+
+    <mat-label>Nome</mat-label>
+    <input matInput required maxlength="20" placeholder="Digite o Nome" />
+    <mat-label>Email</mat-label>
+    <input matInput required maxlength="40" placeholder="Digite o E-mail" />
+
+
+    <mat-label>Telefone</mat-label>
+    <input matInput required  placeholder="(11) 98888-8888" />
+
+    <mat-label>Nome da Empresa</mat-label>
+    <input matInput required placeholder="Digite o nome da empresa" />
+
+    <div class="botoes">
+        <button mat-flat-button color="primary" type="submit" class="button-salvar">
+            Cadastrar
+        </button>
+        <button mat-stroked-button color="warn" type="button" class="button-cancelar" (click)="cancelar()">
+            Cancelar
+        </button>
+    </div>
+</form>

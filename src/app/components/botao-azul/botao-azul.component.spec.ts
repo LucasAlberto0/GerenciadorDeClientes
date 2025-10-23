@@ -1,18 +1,18 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { BotaoHeaderComponent } from './botao-header.component';
+import { BotaoAzulComponent } from './botao-azul.component';
 
-describe('BotaoHeaderComponent', () => {
-  let component: BotaoHeaderComponent;
-  let fixture: ComponentFixture<BotaoHeaderComponent>;
+describe('BotaoAzulComponent', () => {
+  let component: BotaoAzulComponent;
+  let fixture: ComponentFixture<BotaoAzulComponent>;
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      imports: [BotaoHeaderComponent]
+      imports: [BotaoAzulComponent]
     })
     .compileComponents();
 
-    fixture = TestBed.createComponent(BotaoHeaderComponent);
+    fixture = TestBed.createComponent(BotaoAzulComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });
