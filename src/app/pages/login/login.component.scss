@@ -18,6 +18,12 @@ main {
         max-width: 500px;
         width: 100%;
 
+        .error{
+            font-size: 0.7rem;
+            margin-left: 5px;
+            color: red;
+        }
+
         h1 {
             color: #111;
         }

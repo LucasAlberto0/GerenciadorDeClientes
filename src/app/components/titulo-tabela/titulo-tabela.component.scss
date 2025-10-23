@@ -17,37 +17,82 @@ section {
                 font-size: 2.4rem;
                 line-height: normal;
             }
+
             p {
                 color: #494848cc;
             }
         }
 
-
-        .total-de-clientes {
-            background-color: #f8fdff;
-            padding: 20px;
+        .div-informacoes-conta {
+            width: 100%;
             display: flex;
+            flex-direction: row;
+            justify-content: start;
             gap: 20px;
-            width: 300px;
-            border-radius: 15px;
-            align-items: center;
-            border: 1px solid #7573732a;
-            box-shadow: 5px 5px #cccccc83;
 
-            img {
-                width: 45px;
-                height: 45px;
+            .total-de-clientes {
+                background-color: #f8fdff;
+                padding: 20px;
+                display: flex;
+                gap: 20px;
+                width: 300px;
+                border-radius: 15px;
+                align-items: center;
+                border: 1px solid #7573732a;
+                box-shadow: 5px 5px #cccccc83;
+
+                img {
+                    width: 45px;
+                    height: 45px;
+                }
+
+                h2 {
+                    font-size: 1.5rem;
+                    line-height: normal;
+                }
+
+                h3 {
+                    color: #494848cc;
+                }
             }
 
-            h2 {
-                font-size: 2rem;
-                line-height: normal;
-            }
+            .informacoes-conta {
+                background-color: #f8fdff;
+                padding: 20px;
+                display: flex;
+                gap: 20px;
+                width: 300px;
+                border-radius: 15px;
+                align-items: center;
+                border: 1px solid #7573732a;
+                box-shadow: 5px 5px #cccccc83;
 
-            h3 {
-                color: #494848cc;
+                img {
+                    width: 45px;
+                    height: 45px;
+                }
+                .img-empresa{
+                    width: 20px;
+                    height: 20px;
+                }
+
+                p{
+                    display: flex;
+                    align-items: center; gap: 5px;
+                }
+
+                h2 {
+                    font-size: 1.5rem;
+                    line-height: normal;
+                }
+
+                h3 {
+                    color: #494848cc;
+                }
             }
         }
+
+
     }
 }
 
@@ -70,23 +115,24 @@ section {
             }
 
             .total-de-clientes {
-            padding: 16px;
-            width: 300px;
-            img {
-                width: 40px;
-                height: 40px;
-            }
+                padding: 16px;
+                width: 300px;
 
-            h2 {
-                font-size: 1.8rem;
-            }
+                img {
+                    width: 40px;
+                    height: 40px;
+                }
 
-            h3 {
-                color: #494848cc;
+                h2 {
+                    font-size: 1.8rem;
+                }
+
+                h3 {
+                    color: #494848cc;
+                }
             }
         }
     }
-}
 }
 
 @media (max-width: 991px) {
@@ -101,11 +147,12 @@ section {
     section {
         article {
             max-width: 600px;
-.titulo-e-subtitulo{
-            h1 {
-                font-size: 2.1rem;
+
+            .titulo-e-subtitulo {
+                h1 {
+                    font-size: 2.1rem;
+                }
             }
-        }
         }
     }
 }
@@ -122,32 +169,35 @@ section {
     section {
         article {
             max-width: 380px;
-            .titulo-e-subtitulo{
-            h1 {
-                font-size: 1.6rem;
+
+            .titulo-e-subtitulo {
+                h1 {
+                    font-size: 1.6rem;
+                }
+
+                p {
+                    font-size: 0.7rem;
+                }
             }
 
-            p {
-                font-size: 0.7rem;
-            }
-        }
             .total-de-clientes {
-            padding: 16px;
-            width: 250px;
-            padding: 10px;
-            img {
-                width: 35px;
-                height: 35px;
-            }
+                padding: 16px;
+                width: 250px;
+                padding: 10px;
 
-            h2 {
-                font-size: 1.5rem;
-            }
+                img {
+                    width: 35px;
+                    height: 35px;
+                }
 
-            h3 {
-                font-size: 0.9rem;
+                h2 {
+                    font-size: 1.5rem;
+                }
+
+                h3 {
+                    font-size: 0.9rem;
+                }
             }
-        }
         }
     }
 }
@@ -156,15 +206,16 @@ section {
     section {
         article {
             max-width: 330px;
-            .titulo-e-subtitulo{
-            h1 {
-                font-size: 1.6rem;
-            }
 
-            p {
-                font-size: 0.6rem;
+            .titulo-e-subtitulo {
+                h1 {
+                    font-size: 1.6rem;
+                }
+
+                p {
+                    font-size: 0.6rem;
+                }
             }
-        }
         }
     }
 }

@@ -9,4 +9,6 @@ import { Component } from '@angular/core';
 export class TituloTabelaComponent {
 
   totalDeClientes = 2;
+  nomeDaConta = "Carlos";
+  nomeDaEmpresa = "Mosten";
 }
