@@ -7,12 +7,30 @@ article {
     flex-direction: column;
     gap: 18px;
     min-width: 350px;
+    transition: all ease 0.4s;
+
+    h2{
+        transition: all ease 0.3s;
+        
+    }
+
+    &:hover {
+        box-shadow: 5px 5px #cccccc83;
+        transform: translateY(-5px);
+        h2 {
+            color: #2bbdee;
+        }
+    }
 
     .titulo-empresa {
         color: rgb(83, 78, 78);
         display: flex;
         align-items: center;
         gap: 3px;
+
+        h2 {
+            transition: all ease 0.3s;
+        }
 
         img {
             width: 20px;
@@ -95,8 +113,8 @@ article {
     }
 }
 
-@media (max-width: 400px){
-    article{
+@media (max-width: 400px) {
+    article {
         min-width: 280px;
     }
 }
