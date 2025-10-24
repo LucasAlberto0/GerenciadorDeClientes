@@ -40,6 +40,7 @@ section {
                 align-items: center;
                 border: 1px solid #7573732a;
                 box-shadow: 5px 5px #cccccc83;
+                transition: all ease 0.4s;
 
                 img {
                     width: 45px;
@@ -53,6 +54,11 @@ section {
 
                 h3 {
                     color: #494848cc;
+                }
+
+                &:hover {
+                    box-shadow: 8px 8px #cccccc83;
+                    transform: translateY(-5px);
                 }
             }
 
@@ -66,19 +72,22 @@ section {
                 align-items: center;
                 border: 1px solid #7573732a;
                 box-shadow: 5px 5px #cccccc83;
+                transition: all ease 0.4s;
 
                 img {
                     width: 45px;
                     height: 45px;
                 }
-                .img-empresa{
+
+                .img-empresa {
                     width: 20px;
                     height: 20px;
                 }
 
-                p{
+                p {
                     display: flex;
-                    align-items: center; gap: 5px;
+                    align-items: center;
+                    gap: 5px;
                 }
 
                 h2 {
@@ -88,6 +97,11 @@ section {
 
                 h3 {
                     color: #494848cc;
+                }
+
+                &:hover {
+                    box-shadow: 8px 8px #cccccc83;
+                    transform: translateY(-5px);
                 }
             }
         }
