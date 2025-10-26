@@ -33,4 +33,8 @@ export class ClienteService {
     return this._http.put(`${this._apiUrl}/Cliente/EditarCliente`, cliente, {headers})
   }
 
+  excluirCliente(clienteId: number): Observable<any> {
+    const headers = this.getHeaders();
+    return this._http.delete(`${this._apiUrl}/Cliente/DeletarCliente?idCliente=${clienteId}`, { headers });;
+  }
 }

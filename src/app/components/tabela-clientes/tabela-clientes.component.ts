@@ -44,4 +44,8 @@ export class TabelaClientesComponent implements OnInit {
       if (atualizar) this.listarClientes();
     })
   }
+
+  removerCliente(id: number){
+    this.clientes = this.clientes.filter(c => c.id !== id);
+  }
 }

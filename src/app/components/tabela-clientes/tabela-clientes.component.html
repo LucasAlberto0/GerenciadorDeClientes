@@ -6,7 +6,7 @@
         </div>
         <div class="div-cards">
             @for (clientes of clientes; track $index) {
-                <app-card [cliente]="clientes" (editar)="abrirModal(clientes)"/>
+                <app-card [cliente]="clientes" (editar)="abrirModal(clientes)" (clienteDeletado)="removerCliente($event)"/>
             }      
         </div>
     </article>
