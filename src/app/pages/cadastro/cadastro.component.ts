@@ -58,115 +58,25 @@ export class CadastroComponent implements OnInit {
     const senha = formCadastro.get('senha');
     const confirmarSenha = formCadastro.get('confirmarSenha');
 
-    if (nome?.hasError('required')) {
-      this._messageService.add({
-        severity: 'warn',
-        summary: 'Campo obrigatório',
-        detail: 'O nome é obrigatório.',
-        life: 3000
-      });
-      nome.markAsTouched();
-      return;
-    }
+    if(nome?.hasError('required')) return this._toast('warn', 'Campo obrigatório', 'O nome é obrigatório.');
 
-    if (email?.hasError('required')) {
-      this._messageService.add({
-        severity: 'warn',
-        summary: 'Campo obrigatório',
-        detail: 'O email é obrigatório.',
-        life: 3000
-      });
-      email.markAsTouched();
-      return;
-    }
+    if(email?.hasError('required')) return this._toast('warn', 'Campo obrigatório', 'O email é obrigatório.');
 
-    if (email?.hasError('email')) {
-      this._messageService.add({
-        severity: 'error',
-        summary: 'Email inválido',
-        detail: 'Digite um endereço de email válido.',
-        life: 3000
-      });
-      email.markAsTouched();
-      return;
-    }
+    if(email?.hasError('email')) return this._toast('error', 'Campo obrigatório', 'Digite um endereço de email válido.');
 
-    if (empresa?.hasError('required')) {
-      this._messageService.add({
-        severity: 'warn',
-        summary: 'Campo obrigatório',
-        detail: 'O nome da empresa é obrigatório.',
-        life: 3000
-      });
-      empresa.markAsTouched();
-      return;
-    }
+    if(empresa?.hasError('required')) return this._toast('warn', 'Campo obrigatório', 'O nome da empresa é obrigatório.');
 
-    if (senha?.hasError('required')) {
-      this._messageService.add({
-        severity: 'warn',
-        summary: 'Campo obrigatório',
-        detail: 'A senha é obrigatória.',
-        life: 3000
-      });
-      senha.markAsTouched();
-      return;
-    }
+    if(senha?.hasError('required')) return this._toast('warn', 'Campo obrigatório', 'A senha é obrigatória.');
 
-    if (senha?.hasError('minlength')) {
-      this._messageService.add({
-        severity: 'info',
-        summary: 'Senha muito curta',
-        detail: 'A senha deve ter pelo menos 3 caracteres.',
-        life: 3000
-      });
-      senha.markAsTouched();
-      return;
-    }
+    if(senha?.hasError('minlength')) return this._toast('info', 'Senha muito curta', 'A senha deve ter pelo menos 3 caracteres.');
 
-    if (confirmarSenha?.hasError('required')) {
-      this._messageService.add({
-        severity: 'warn',
-        summary: 'Campo obrigatório',
-        detail: 'É necessário confirmar a senha.',
-        life: 3000
-      });
-      confirmarSenha.markAsTouched();
-      return;
-    }
+    if(confirmarSenha?.hasError('required')) return this._toast('warn', 'Campo obrigatório', 'É necessário confirmar a senha.');
 
-    if (confirmarSenha?.hasError('minlength')) {
-      this._messageService.add({
-        severity: 'info',
-        summary: 'Senha muito curta',
-        detail: 'A confirmação de senha deve ter pelo menos 3 caracteres.',
-        life: 3000
-      });
-      confirmarSenha.markAsTouched();
-      return;
-    }
+    if(confirmarSenha?.hasError('minlength')) return this._toast('info', 'Senha muito curta', 'A confirmação de senha deve ter pelo menos 3 caracteres.');
 
-    if (senha?.value !== confirmarSenha?.value) {
-      this._messageService.add({
-        severity: 'error',
-        summary: 'Senhas diferentes',
-        detail: 'As senhas não coincidem. Verifique e tente novamente.',
-        life: 3000
-      });
-      confirmarSenha?.markAsTouched();
-      return;
-    }
+    if(senha?.value !== confirmarSenha?.value) return this._toast('error', 'Senhas diferentes', 'As senhas não coincidem. Verifique e tente novamente.');
 
-    if (!formCadastro.valid) {
-      this._messageService.add({
-        severity: 'warn',
-        summary: 'Formulário inválido',
-        detail: 'Preencha todos os campos obrigatórios corretamente.',
-        life: 3000
-      });
-      formCadastro.markAllAsTouched();
-      return;
-    }
+    if(!formCadastro.valid) return this._toast('warn', 'Formulário inválido', 'Preencha todos os campos obrigatórios corretamente.');
 
     const novoCadastro = formCadastro.getRawValue() as ICadastroGerente;
     this._gerenteService.cadastrar(novoCadastro).subscribe({
@@ -192,5 +102,9 @@ export class CadastroComponent implements OnInit {
         });
       }
     });
+  }
+
+  private _toast(severity: 'success' | 'info' | 'warn' | 'error', summary: string, detail: string) {
+    this._messageService.add({ severity, summary, detail, life: 3000 });
   }
 }

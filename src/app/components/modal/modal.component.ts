@@ -57,11 +57,17 @@ export class ModalComponent implements OnInit {
     const cidade = form.get('cidade');
 
     if (nome?.hasError('required')) return this._toast('warn', 'Campo obrigatório', 'O nome é obrigatório.');
+
     if (empresa?.hasError('required')) return this._toast('warn', 'Campo obrigatório', 'O nome da empresa é obrigatorio.');
+
     if (email?.hasError('required')) return this._toast('warn', 'Campo obrigatório', 'O email é obrigatório.');
+
     if (email?.hasError('email')) return this._toast('error', 'Email inválido', 'Digite um email válido.');
+
     if (ramo?.hasError('required')) return this._toast('warn', 'Campo obrigatório', 'O ramo da empresa é obrigatório.');
+
     if (telefone?.hasError('required')) return this._toast('warn', 'Campo obrigatório', 'O telefone é obrigatório.');
+    
     if (cidade?.hasError('required')) return this._toast('warn', 'Campo obrigatório', 'A cidade é obrigatória.');
 
     if (!form.valid) {

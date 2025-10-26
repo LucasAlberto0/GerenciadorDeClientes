@@ -40,49 +40,13 @@ export class LoginComponent implements OnInit {
     const emailControl = form.get('email');
     const senhaControl = form.get('senha');
 
-    if (emailControl?.hasError('required')) {
-      this._messageService.add({
-        severity: 'warn',
-        summary: 'Campo obrigatório',
-        detail: 'O email é obrigatório.',
-        life: 3000
-      });
-      emailControl.markAsTouched();
-      return;
-    }
+    if(emailControl?.hasError('required')) return this._toast('warn', 'Campo obrigatório', 'O email é obrigatório.');
 
-    if (emailControl?.hasError('email')) {
-      this._messageService.add({
-        severity: 'error',
-        summary: 'Email inválido',
-        detail: 'Digite um endereço de email valido.',
-        life: 3000
-      });
-      emailControl.markAsTouched();
-      return;
-    }
+    if(emailControl?.hasError('email')) return this._toast('error', 'Email inválido', 'Digite um endereço de email válido');
+    
+    if(senhaControl?.hasError('required')) return this._toast('warn', 'Campo obrigatório', 'A senha é obrigatória.');
 
-    if (senhaControl?.hasError('required')) {
-      this._messageService.add({
-        severity: 'warn',
-        summary: 'Campo obrigatório',
-        detail: 'A senha é obrigatoria.',
-        life: 3000
-      });
-      senhaControl.markAsTouched();
-      return;
-    }
-
-    if (!form.valid) {
-      this._messageService.add({
-        severity: 'warn',
-        summary: 'Formulário inválido',
-        detail: 'Preencha todos os campos corretamente.',
-        life: 3000
-      });
-      form.markAllAsTouched();
-      return;
-    }
+    if(!form.valid)  return this._toast('warn', 'Formulário inválido', 'Preencha todos os campos corretamente.');
 
     const { email, senha } = form.getRawValue();
 
@@ -114,5 +78,9 @@ export class LoginComponent implements OnInit {
       }
     });
     this.clickLogar = false;
+  }
+
+  private _toast(severity: 'success' | 'info' | 'warn' | 'error', summary: string, detail: string) {
+    this._messageService.add({ severity, summary, detail, life: 3000 });
   }
 }
