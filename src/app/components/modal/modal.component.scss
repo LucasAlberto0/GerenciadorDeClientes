@@ -3,10 +3,12 @@ form {
     padding: 20px;
     border-top: 5px solid #2bbdee;
     border-bottom: 5px solid #2bbdee;
+
     h2 {
         color: #111;
         margin-bottom: 3px;
     }
+
     p {
         color: #504d4da4;
     }
@@ -17,45 +19,44 @@ form {
     flex-direction: column;
     gap: 15px;
     overflow-y: auto;
+
     mat-label {
         color: #FFFAFA;
     }
+
     input {
         color: #111;
         background-color: #FFFAFA;
         border: 2px solid #b5afaf5d;
         padding: 20px 10px;
         border-radius: 10px;
+        transition: all ease 0.3s;
+
+        &:hover {
+            border-color: #ceeef8;
+        }
+
         &.invalido {
             border-color: red;
         }
+
         &:focus {
             border-color: #2bbdee;
             outline: none;
         }
+
         &::placeholder {
             color: #353434d0;
             opacity: 0.6;
         }
     }
+
     .div-erro {
         color: red;
         font-size: 12px;
         margin-top: 2px;
     }
-    .input-seletor{
-        
-        background-color: #FFFAFA;
-        border: 2px solid #b5afaf5d;
-        border-radius: 10px;
-        margin: 0;
-        &::placeholder{
-            color: #353434d0;
-            opacity: 0.6;
-        }
-    }
 }
-
 
 .botoes {
     display: flex;
@@ -63,10 +64,12 @@ form {
     gap: 12px;
     background-color: #FFFAFA;
     border: none;
+
     button {
         background-color: #2bbdee;
         color: #FFFAFA;
     }
+
     .button-cancelar {
         background-color: #111;
     }
@@ -76,8 +79,39 @@ form {
     background-color: #FFFAFA;
 }
 
-@media (max-width: 480px){
-    form{
+.input-telefone {
+    ::ng-deep input {
+        color: #111;
+        background-color: #FFFAFA;
+        border: 2px solid #b5afaf5d;
+        padding: 20px 10px;
+        border-radius: 10px;
+        font-size: small;
+        width: 100%;
+
+        &.invalido {
+            border-color: red;
+        }
+
+        &:hover {
+            border-color: #ceeef8;
+        }
+
+        &:focus {
+            border-color: #2bbdee;
+            outline: none;
+        }
+
+        &::placeholder {
+            color: #353434d0;
+            opacity: 0.6;
+        }
+    }
+}
+
+
+@media (max-width: 480px) {
+    form {
         height: 80vh;
     }
 }

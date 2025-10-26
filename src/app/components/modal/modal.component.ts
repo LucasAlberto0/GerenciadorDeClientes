@@ -7,22 +7,28 @@ import { MatButtonModule } from '@angular/material/button';
 import { MAT_DIALOG_DATA, MatDialogRef } from '@angular/material/dialog';
 import { ClienteService } from '../../services/cliente.service';
 import { GerenteService } from '../../services/gerente.service';
+import { MessageService } from 'primeng/api';
+import { Toast } from "primeng/toast";
+import { InputMaskModule } from 'primeng/inputmask';
 
 @Component({
   selector: 'app-modal',
-  imports: [CommonModule, ReactiveFormsModule, MatFormFieldModule, MatInputModule, MatButtonModule],
+  imports: [CommonModule, ReactiveFormsModule, MatFormFieldModule, MatInputModule, MatButtonModule, Toast, InputMaskModule],
   templateUrl: './modal.component.html',
-  styleUrl: './modal.component.scss'
+  styleUrl: './modal.component.scss',
+  providers: [MessageService]
 })
 export class ModalComponent implements OnInit {
   formCliente!: FormGroup;
   modoEdicao = false;
+  loading: boolean = false;
 
   constructor(
     private _dialogRef: MatDialogRef<ModalComponent>,
     private _clienteService: ClienteService,
     private _fb: FormBuilder,
     private _gerenteService: GerenteService,
+    private _messageService: MessageService,
     @Inject(MAT_DIALOG_DATA) public data: any
   ) { }
 
@@ -40,33 +46,64 @@ export class ModalComponent implements OnInit {
   }
 
   salvar() {
-    if (this.formCliente.invalid) return;
+    const form = this.formCliente;
+    if (!form) return;
 
-    const payload = { ...this.formCliente.value };
+    const nome = form.get('nome');
+    const empresa = form.get('nomeDaEmpresa');
+    const email = form.get('email');
+    const ramo = form.get('ramoDaEmpresa');
+    const telefone = form.get('telefone');
+    const cidade = form.get('cidade');
 
-    if (this.modoEdicao) {
-      payload.id = this.data.cliente.id;
+    if (nome?.hasError('required')) return this._toast('warn', 'Campo obrigatório', 'O nome é obrigatório.');
+    if (empresa?.hasError('required')) return this._toast('warn', 'Campo obrigatório', 'O nome da empresa é obrigatorio.');
+    if (email?.hasError('required')) return this._toast('warn', 'Campo obrigatório', 'O email é obrigatório.');
+    if (email?.hasError('email')) return this._toast('error', 'Email inválido', 'Digite um email válido.');
+    if (ramo?.hasError('required')) return this._toast('warn', 'Campo obrigatório', 'O ramo da empresa é obrigatório.');
+    if (telefone?.hasError('required')) return this._toast('warn', 'Campo obrigatório', 'O telefone é obrigatório.');
+    if (cidade?.hasError('required')) return this._toast('warn', 'Campo obrigatório', 'A cidade é obrigatória.');
 
-      this._clienteService.editarCliente(payload).subscribe({
-        next: (res) => {
-          console.log('Cliente editado com sucesso!', res);
-          this._dialogRef.close(true);
-        },
-        error: (err) => console.error('Erro ao editar cliente', err)
-      });
-    } else {
-      this._clienteService.criarCliente(payload).subscribe({
-        next: (res) => {
-          console.log('Cliente criado com sucesso!', res);
-          this._dialogRef.close(true);
-          this._gerenteService.emitirAtualizacao();
-        },
-        error: (err) => console.error('Erro ao criar cliente', err)
-      });
+    if (!form.valid) {
+      return this._toast('warn', 'Formulário inválido', 'Preencha todos os campos corretamente.');
     }
+
+    const payload = { ...form.getRawValue() };
+    if (this.modoEdicao) payload.id = this.data.cliente.id;
+
+    this.loading = true;
+
+    const requisicao = this.modoEdicao
+      ? this._clienteService.editarCliente(payload)
+      : this._clienteService.criarCliente(payload);
+
+    requisicao.subscribe({
+      next: (res) => {
+        this._toast(
+          'success',
+          this.modoEdicao ? 'Cliente atualizado!' : 'Cliente criado!',
+          this.modoEdicao ? 'As informações do cliente foram atualizadas com sucesso.' : 'Novo cliente cadastrado com sucesso.'
+        );
+
+        setTimeout(() => {
+          this.loading = false;
+          this._dialogRef.close(true);
+          if (!this.modoEdicao) this._gerenteService.emitirAtualizacao();
+        }, 1000);
+      },
+      error: (err) => {
+        console.error('Erro ao salvar cliente', err);
+        this._toast('error', 'Erro', err?.error?.message || 'Ocorreu um erro inesperado. Tente novamente.');
+        this.loading = false;
+      }
+    });
   }
 
   cancelar() {
     this._dialogRef.close();
+  }
+
+  private _toast(severity: 'success' | 'info' | 'warn' | 'error', summary: string, detail: string) {
+    this._messageService.add({ severity, summary, detail, life: 3000 });
   }
 }

@@ -94,7 +94,7 @@ export class LoginComponent implements OnInit {
         this._messageService.add({
           severity: 'success',
           summary: 'Login realizado!',
-          detail: 'Bem-vindo de volta!',
+          detail: 'Bem-vindo!',
           life: 2500
         });
 
