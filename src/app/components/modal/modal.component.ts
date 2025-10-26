@@ -6,6 +6,7 @@ import { MatInputModule } from '@angular/material/input';
 import { MatButtonModule } from '@angular/material/button';
 import { MAT_DIALOG_DATA, MatDialogRef } from '@angular/material/dialog';
 import { ClienteService } from '../../services/cliente.service';
+import { GerenteService } from '../../services/gerente.service';
 
 @Component({
   selector: 'app-modal',
@@ -21,6 +22,7 @@ export class ModalComponent implements OnInit {
     private _dialogRef: MatDialogRef<ModalComponent>,
     private _clienteService: ClienteService,
     private _fb: FormBuilder,
+    private _gerenteService: GerenteService,
     @Inject(MAT_DIALOG_DATA) public data: any
   ) { }
 
@@ -57,6 +59,7 @@ export class ModalComponent implements OnInit {
         next: (res) => {
           console.log('Cliente criado com sucesso!', res);
           this._dialogRef.close(true);
+          this._gerenteService.emitirAtualizacao();
         },
         error: (err) => console.error('Erro ao criar cliente', err)
       });
