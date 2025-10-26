@@ -28,17 +28,16 @@ export class TituloTabelaComponent implements OnInit {
   }
 
   carregarDadosGerente(): void {
-    this._gerenteService.obterDados().subscribe({
-      next: (dados: IDadosGerente) => {
-        this.nomeDaConta = dados.nome;
-        this.nomeDaEmpresa = dados.empresa;
-        this.totalDeClientes = dados.totalClientes;
-      },
-      error: (erro) => {
-        console.error('Erro ao carregar os dados do gerente', erro);
-      }
-
-    })
-  }
+  this._gerenteService.obterDados().subscribe({
+    next: (dados: IDadosGerente) => {
+      this.nomeDaConta = dados.nome;
+      this.nomeDaEmpresa = dados.empresa;
+      this.totalDeClientes = dados.totalClientes;
+    },
+    error: (erro) => {
+      console.error('Erro ao carregar os dados do gerente', erro);
+    }
+  });
+}
 
 }

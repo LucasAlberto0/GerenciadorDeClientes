@@ -1,7 +1,7 @@
 import { enviroment } from './../../enviroments/enviroment';
 import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { inject, Injectable } from '@angular/core';
-import { Observable, Subject } from 'rxjs';
+import { map, Observable, Subject } from 'rxjs';
 import { ICadastroGerente } from '../interfaces/ICadastoGerenteInterface';
 import { IDadosGerente } from '../interfaces/IDadosGerente';
 
@@ -15,7 +15,7 @@ export class GerenteService {
 
   private _autalizarDados$ = new Subject<void>();
 
-  constructor(private _http: HttpClient, ) {}
+  constructor(private _http: HttpClient,) { }
 
   private getHeaders(): HttpHeaders {
     const token = localStorage.getItem('token');
@@ -25,12 +25,15 @@ export class GerenteService {
     });
   }
 
-  cadastrar(gerenteCadastro: ICadastroGerente): Observable<ICadastroGerente>{
+  cadastrar(gerenteCadastro: ICadastroGerente): Observable<ICadastroGerente> {
     return this._http.post<ICadastroGerente>(`${this._apiUrl}/gerente/cadastro`, gerenteCadastro);
   }
 
-  obterDados(): Observable<IDadosGerente>{
-    return this._http.get<IDadosGerente>(`${this._apiUrl}/gerente/dados`, {headers: this.getHeaders()});
+  obterDados(): Observable<IDadosGerente> {
+    return this._http.get<{ dados: IDadosGerente }>(`${this._apiUrl}/gerente/dados`, { headers: this.getHeaders() })
+      .pipe(
+        map(resposta => resposta.dados)
+      );
   }
 
   get atualizarDados$(): Observable<void> {
