@@ -7,16 +7,17 @@ article {
     flex-direction: column;
     gap: 18px;
     min-width: 350px;
-    transition: all ease 0.4s;
+    transition: all ease 0.4s !important;
 
-    h2{
+    h2 {
         transition: all ease 0.3s;
-        
+
     }
 
     &:hover {
         box-shadow: 5px 5px #cccccc83;
-        transform: translateY(-5px);
+        transform: translateY(-5px) !important;
+
         h2 {
             color: #2bbdee;
         }
@@ -110,6 +111,19 @@ article {
             }
 
         }
+    }
+}
+
+.card-animacao {
+    opacity: 0;
+    margin-top: -20px;
+    animation: entrada 1s ease-out forwards;
+}
+
+@keyframes entrada {
+    to {
+        margin-top: 0; 
+        opacity: 1;
     }
 }
 
