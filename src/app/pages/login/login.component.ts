@@ -26,17 +26,20 @@ export class LoginComponent implements OnInit {
   ngOnInit(): void {
     this.loginForm = this._fb.group({
       email: [null, [Validators.email, Validators.required]],
-      password: [null, Validators.required]
+      senha: [null, Validators.required]
     })
   }
 
   login() {
     const email = this.loginForm.value.email;
-    const senha = this.loginForm.value.password;
+    const senha = this.loginForm.value.senha;
 
     this._authService.autenticar(email, senha).subscribe({
       next: (value) => {
         console.log('Login realizado com sucesso!', value);
+
+        localStorage.setItem('token', value.token)
+
         this._router.navigateByUrl('/dashboard');
       },
       error: (err) => {

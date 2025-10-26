@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, EventEmitter, Input, Output } from '@angular/core';
 import { MatDialog } from '@angular/material/dialog';
 import { ModalComponent } from '../modal/modal.component';
 
@@ -9,13 +9,6 @@ import { ModalComponent } from '../modal/modal.component';
   styleUrl: './card.component.scss'
 })
 export class CardComponent {
-  ramoEmpresa: string = "Tecnologia";
-
-  constructor(private _dialog: MatDialog) {}
-
-  editarProduto(){
-    const dialogRef = this._dialog.open(ModalComponent, {
-      width: '500px'
-    })
-  }
+  @Input() cliente!: any;
+  @Output() editar = new EventEmitter<any>();
 }

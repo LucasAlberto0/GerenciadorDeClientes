@@ -1,26 +1,29 @@
-<form class=" form-container" >
+<form [formGroup]="formCliente" (ngSubmit)="salvar()" class=" form-container">
     <div>
-        <h2 class="font-quando-b" mat-dialog-title>Cadastrar</h2>
-        <p class="font-quando">Preencha os dados do cliente abaixo</p>
+        <h2 class="font-quando-b" mat-dialog-title>
+            {{modoEdicao ? 'Editar Cliente' : 'Criar Cliente'}}
+        </h2>
+        <p class="font-quando">
+            {{modoEdicao ? 'Atualize os dados abaixo' : 'Preencha os dados do cliente'}}
+        </p>
     </div>
 
-    <input matInput required maxlength="20" placeholder="Digite o Nome do cliente " />
+    <input matInput formControlName="nome" required maxlength="20" placeholder="Digite o Nome do cliente " />
 
-    <input matInput required placeholder="Digite o nome da empresa" />
+    <input matInput formControlName="nomeDaEmpresa" required placeholder="Digite o nome da empresa" />
 
-    <input matInput required maxlength="40" placeholder="Digite o e-mail" />
-    
-    <p-select [options]="cities"  optionLabel="name" placeholder="Selecione o ramo da empresa" class="input-seletor"/>
-    
-    <input matInput required  placeholder="(11) 98888-8888" />
+    <input matInput formControlName="email" required maxlength="40" placeholder="Digite o e-mail" />
+
+    <input matInput formControlName="ramoDaEmpresa" required maxlength="40" placeholder="Digite o ramo da empresa" />
+
+    <input matInput formControlName="telefone" required placeholder="(11) 98888-8888" />
 
 
-    <input matInput required placeholder="Digite a cidade da empresa" />
-
+    <input matInput formControlName="cidade" required placeholder="Digite a cidade da empresa" />
 
     <div class="botoes">
         <button mat-flat-button color="primary" type="submit" class="button-salvar">
-            Cadastrar
+            {{ modoEdicao ? 'Salvar Alterações' : 'Cadastrar'}}
         </button>
         <button mat-stroked-button color="warn" type="button" class="button-cancelar" (click)="cancelar()">
             Cancelar

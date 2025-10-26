@@ -17,7 +17,7 @@
             </p-floatlabel>
 
             <p-floatlabel variant="in" >
-                <p-password formControlName="password"  inputId="in_label" [toggleMask]="true" promptLabel="Digite a senha" weakLabel="Muito simples" mediumLabel="Media" strongLabel="Forte" />
+                <p-password formControlName="senha"  inputId="in_label" [toggleMask]="true" promptLabel="Digite a senha" weakLabel="Muito simples" mediumLabel="Media" strongLabel="Forte" />
                 <label for="in_label">Senha</label>
                 <ng-template #header>
             <div class="font-semibold text-xm mb-4">Reset Password</div>
@@ -25,7 +25,7 @@
             </p-floatlabel>
 
             <p-floatlabel variant="in">
-                <p-password formControlName="rePassword" [toggleMask]="true" [feedback]="false" class="input-custom" />
+                <p-password formControlName="confirmarSenha" [toggleMask]="true" [feedback]="false" class="input-custom" />
                 <label for="over_label">Repetir a senha</label>
             </p-floatlabel>
         </div>

@@ -5,9 +5,9 @@
             <app-botao-azul (clicado)="abrirModal()" icone="img/icons/plus-icon.svg" texto="Criar Cliente"/>
         </div>
         <div class="div-cards">
-            <app-card/>
-            <app-card/>
-            <app-card/>
+            @for (clientes of clientes; track $index) {
+                <app-card [cliente]="clientes" (editar)="abrirModal(clientes)"/>
+            }      
         </div>
     </article>
 </section>

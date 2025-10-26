@@ -9,7 +9,14 @@ import { BotaoAzulComponent } from "../botao-azul/botao-azul.component";
   styleUrl: './header.component.scss'
 })
 export class HeaderComponent {
+  private _router = inject(Router)
+
   @Input() textoBotao: string = 'Teste';
   @Input() rotaBotao: string = '/cadastro';
   @Input() localizacaoIcone: string = "img/icons/arrow-right-icon.svg"
+
+  sair() {
+    localStorage.removeItem('token');
+    this._router.navigate([''])
+  }
 }

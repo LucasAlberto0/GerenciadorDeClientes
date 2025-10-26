@@ -12,7 +12,7 @@ export class AutenticacaoService {
 
   constructor(private _http: HttpClient) {}
 
-  autenticar(email: string, password: string): Observable<any>{
-    return this._http.post(`${this._apiUrl}/gerente/login`, {email, password})
+  autenticar(email: string, senha: string): Observable<any>{
+    return this._http.post(`${this._apiUrl}/gerente/login`, {email, senha})
   }
 }

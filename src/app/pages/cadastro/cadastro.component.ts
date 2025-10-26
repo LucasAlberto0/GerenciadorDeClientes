@@ -27,8 +27,8 @@ export class CadastroComponent implements OnInit {
         nome: [null, Validators.required],
         email: [null, [Validators.email, Validators.required]],
         empresa: [null, [Validators.required]],
-        password: [null, [Validators.required, Validators.minLength(3)]],
-        rePassword: [null, [Validators.required, Validators.minLength(3)]]
+        senha: [null, [Validators.required, Validators.minLength(3)]],
+        confirmarSenha: [null, [Validators.required, Validators.minLength(3)]]
       })
     }
 
@@ -49,6 +49,7 @@ export class CadastroComponent implements OnInit {
         this._gerenteService.cadastrar(novoCadastro).subscribe({
           next: (value) => {
             console.log('Cadastro realizado', value)
+            this._router.navigateByUrl('login')
           },
           error: (err) => {
             console.log('Erro ao cadastrar', err)
@@ -56,7 +57,4 @@ export class CadastroComponent implements OnInit {
         })
       }
     }
-
-
-
 }

@@ -1,27 +1,27 @@
 <article>
-    <h2>João Silva</h2>
+    <h2>{{cliente?.nome}}</h2>
     <div class="titulo-empresa"><img src="img/icons/empresa-icon.svg" alt="">
-        <p>Tech Solutions {{ramoEmpresa}}</p>
+        <p>{{cliente?.nomeDaEmpresa}}</p>
     </div>
     <aside div="div-campos-do-usuario">
         <div class="div-campo">
             <div class="fundo-img"><img src="img/icons/trabalho-icon.svg" alt=""></div>
-            <p>Tecnologia</p>
+            <p>{{cliente?.ramoDaEmpresa}}</p>
         </div>
         <div class="div-campo">
             <div class="fundo-img"><img src="img/icons/email-icon.svg" alt=""></div>
-            <p>joao@email.com</p>
+            <p>{{cliente?.email}}</p>
         </div>
         <div class="div-campo">
             <div class="fundo-img"><img src="img/icons/telefone-icon.svg" alt=""></div>
-            <p>(11) 98888-8888</p>
+            <p>{{cliente?.telefone}}</p>
         </div>
         <div class="div-campo">
             <div class="fundo-img"><img src="img/icons/localizacao-icon.svg" alt=""></div>
-            <p>Santos, Sp</p>
+            <p>{{cliente?.cidade}}</p>
         </div>
         <div class="div-button">
-            <button class="button-editar" (click)="editarProduto()"><img src="img/icons/edit-icon.svg"
+            <button class="button-editar" (click)="editar.emit(cliente)"><img src="img/icons/edit-icon.svg"
                     alt="">Editar</button>
             <button class="button-excluir"><img src="img/icons/delete-icon.svg" alt="">Excluir</button>
         </div>

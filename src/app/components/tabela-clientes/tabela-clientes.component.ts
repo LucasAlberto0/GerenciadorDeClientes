@@ -1,23 +1,47 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { BotaoAzulComponent } from "../botao-azul/botao-azul.component";
 import { CardComponent } from "../card/card.component";
 import { MatDialog } from '@angular/material/dialog';
 import { ModalComponent } from '../modal/modal.component';
+import { ClienteService } from '../../services/cliente.service';
+import { CommonModule } from '@angular/common';
 
 
 @Component({
   selector: 'app-tabela-clientes',
-  imports: [BotaoAzulComponent, CardComponent],
+  imports: [BotaoAzulComponent, CardComponent, CommonModule],
   templateUrl: './tabela-clientes.component.html',
   styleUrl: './tabela-clientes.component.scss'
 })
-export class TabelaClientesComponent {
+export class TabelaClientesComponent implements OnInit {
+  clientes: any[] = [];
 
-  constructor(private _dialog: MatDialog) {}
+  constructor(private _dialog: MatDialog, private _clienteService: ClienteService) { }
 
-  abrirModal() {
+  ngOnInit(): void {
+    this.listarClientes();
+  }
+
+  listarClientes() {
+    this._clienteService.listarClientesDoGestor().subscribe({
+      next: (res) => {
+        this.clientes = res.dados;
+        console.log(this.clientes);
+      },
+      error: (err) => {
+        console.error('Erro ao listar clientes', err);
+      }
+    })
+  }
+
+  abrirModal(cliente?: any) {
     const dialogRef = this._dialog.open(ModalComponent, {
-      width: '500px'
+      width: '500px',
+      data: cliente ? { cliente } : null
     });
+
+    dialogRef.afterClosed().subscribe((atualizar) => {
+      if (atualizar) this.listarClientes();
+    })
   }
 }
