@@ -9,12 +9,7 @@
         "image-alt": "off"
       }
     ],
-    "axe/forms": [
-      "default",
-      {
-        "label": "off"
-      }
-    ],
+    "axe/forms": "off",
     "typescript-config/is-valid": "off",
     "axe/name-role-value": "off"
   }

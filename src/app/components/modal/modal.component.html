@@ -1,4 +1,4 @@
-<p-toast/>
+<p-toast />
 <form [formGroup]="formCliente" (ngSubmit)="salvar()" class=" form-container">
     <div>
         <h2 class="font-quando-b" mat-dialog-title>
@@ -17,9 +17,20 @@
 
     <input matInput formControlName="ramoDaEmpresa" required maxlength="40" placeholder="Digite o ramo da empresa" />
 
-    <p-inputMask formControlName="telefone" mask="(99) 99999-9999" placeholder="(11) 98888-8888" class="input-telefone"></p-inputMask>
+    <p-inputMask formControlName="telefone" mask="(99) 99999-9999" placeholder="(11) 98888-8888"
+        class="input-telefone"></p-inputMask>
 
     <input matInput formControlName="cidade" required placeholder="Digite a cidade da empresa" />
+
+    <input matInput formControlName="cidade" required placeholder="Digite a cidade da empresa" />
+
+    <select id="status" name="status" required>
+        <option value="" disabled selected hidden>Escolha um status</option>
+        <option>Ativo</option>
+        <option>Em Negociação</option>
+        <option>Inativo</option>
+    </select>
+
 
     <div class="botoes">
         <button mat-flat-button color="primary" type="submit" class="button-salvar">

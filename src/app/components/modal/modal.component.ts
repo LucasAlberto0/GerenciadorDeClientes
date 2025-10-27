@@ -42,6 +42,7 @@ export class ModalComponent implements OnInit {
       ramoDaEmpresa: [this.data?.cliente?.ramoDaEmpresa || '', Validators.required],
       telefone: [this.data?.cliente?.telefone || '', Validators.required],
       cidade: [this.data?.cliente?.cidade || '', Validators.required],
+      status: [this.data?.cliente?.status || '', Validators.required],
     });
   }
 
@@ -55,6 +56,7 @@ export class ModalComponent implements OnInit {
     const ramo = form.get('ramoDaEmpresa');
     const telefone = form.get('telefone');
     const cidade = form.get('cidade');
+    const status = form.get('status');
 
     if (nome?.hasError('required')) return this._toast('warn', 'Campo obrigatório', 'O nome é obrigatório.');
 
@@ -69,6 +71,8 @@ export class ModalComponent implements OnInit {
     if (telefone?.hasError('required')) return this._toast('warn', 'Campo obrigatório', 'O telefone é obrigatório.');
     
     if (cidade?.hasError('required')) return this._toast('warn', 'Campo obrigatório', 'A cidade é obrigatória.');
+
+    if (status?.hasError('required')) return this._toast('warn', 'Campo obrigatório', 'O status é obrigatório.');
 
     if (!form.valid) {
       return this._toast('warn', 'Formulário inválido', 'Preencha todos os campos corretamente.');

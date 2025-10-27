@@ -50,6 +50,36 @@ form {
             opacity: 0.6;
         }
     }
+    select {
+        color: var(--preto);
+        background-color: var(--branco-principal);
+        border: 2px solid var(--cinza-border-box);
+        padding: 20px 10px;
+        border-radius: 10px;
+        transition: all ease 0.3s;
+        width: 100%;
+        font-size: 0.8rem;
+        cursor: pointer;
+
+        &:hover {
+            border-color: var(--azul-hover);
+        }
+
+        &.invalido {
+            border-color: var(--vermelho);
+        }
+
+        &:focus {
+            border-color: var(--azul-principal);
+            outline: none;
+        }
+
+        &:invalid {
+            color: var(--subtitulo);
+            opacity: 0.6;
+        }
+
+    }
 }
 
 .botoes {
@@ -84,7 +114,7 @@ form {
         width: 100%;
 
         &.invalido {
-            border-color: var(--veremelho);
+            border-color: var(--vermelho);
         }
 
         &:hover {
@@ -102,7 +132,6 @@ form {
         }
     }
 }
-
 
 @media (max-width: 480px) {
     form {
