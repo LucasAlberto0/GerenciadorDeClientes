@@ -11,7 +11,7 @@ export class ClienteService {
 
   constructor(private _http: HttpClient) {}
 
-  private getHeaders(): HttpHeaders {
+  private obterHeaders(): HttpHeaders {
     const token = localStorage.getItem('token');
     return new HttpHeaders({
       'Authorization': `Bearer ${token}`,
@@ -20,21 +20,21 @@ export class ClienteService {
   }
 
   listarClientesDoGestor(): Observable<any> {
-    return this._http.get(`${this._apiUrl}/Cliente/ListarClientes`, {headers: this.getHeaders()})
+    return this._http.get(`${this._apiUrl}/Cliente/ListarClientes`, {headers: this.obterHeaders()})
   }
 
   criarCliente(cliente: any): Observable<any> {
-  const headers = this.getHeaders();
+  const headers = this.obterHeaders();
   return this._http.post(`${this._apiUrl}/Cliente/CriarCliente`, cliente, { headers });
 }
 
   editarCliente(cliente: any): Observable<any> {
-    const headers = this.getHeaders();
+    const headers = this.obterHeaders();
     return this._http.put(`${this._apiUrl}/Cliente/EditarCliente`, cliente, {headers})
   }
 
   excluirCliente(clienteId: number): Observable<any> {
-    const headers = this.getHeaders();
+    const headers = this.obterHeaders();
     return this._http.delete(`${this._apiUrl}/Cliente/DeletarCliente?idCliente=${clienteId}`, { headers });
   }
 }

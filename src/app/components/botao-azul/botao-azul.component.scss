@@ -1,8 +1,8 @@
 button {
-    background-color: #2BBDEE;
+    background-color: var(--azul-principal);
     border-radius: 10px;
     padding: 10px;
-    color: #FFFAFA;
+    color: var(--branco-principal);
     transition: all ease 0.4s;
     display: flex;
     align-items: center;
@@ -12,7 +12,7 @@ button {
     font-size: 1rem;
     &:hover {
         scale: 1.1;
-        background-color: #7ed3f0;
+        background-color: var(--azul-hover);
     }
 }
 

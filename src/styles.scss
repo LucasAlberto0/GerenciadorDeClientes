@@ -1,4 +1,3 @@
-
 // Include theming for Angular Material with `mat.theme()`.
 // This Sass mixin will define CSS variables that are used for styling Angular Material
 // components according to the Material 3 design spec.
@@ -7,14 +6,12 @@
 @use '@angular/material' as mat;
 
 html {
-  @include mat.theme((
-    color: (
-      primary: mat.$azure-palette,
-      tertiary: mat.$blue-palette,
-    ),
-    typography: Roboto,
-    density: 0,
-  ));
+  @include mat.theme((color: (primary: mat.$azure-palette,
+        tertiary: mat.$blue-palette,
+      ),
+      typography: Roboto,
+      density: 0,
+    ));
 }
 
 body {
@@ -33,43 +30,41 @@ body {
   // Reset the user agent margin.
   margin: 0;
 }
-*{
-    margin: 0;
-    padding: 0;
+
+
+* {
+  margin: 0;
+  padding: 0;
+}
+
+html,
+body {
+  height: 100%;
 }
 
 .font-quando {
-    font-family: "Quando", serif;
-    font-weight: 500;
-    font-style: normal;
+  font-family: "Quando", serif;
+  font-weight: 500;
+  font-style: normal;
 }
 
 .font-quando-b {
-    font-family: "Quando", serif;
-    font-weight: 800;
-    font-style: normal;
+  font-family: "Quando", serif;
+  font-weight: 800;
+  font-style: normal;
 }
 
-.texto-azul{
-    color: #2BBDEE;
+:root {
+  --azul-principal: #2BBDEE;
+  --azul-hover: #7ed3f0;
+  --fundo-login-cadastro: rgba(120, 199, 230, 0.26);
+  --fundo-form-login-cadastro: #4992e617;
+  --branco-fundo: #f8fdff;
+  --branco-principal: #FFFAFA;
+  --branco-escurecido: #F1F5F9;
+  --preto: #111;
+  --cinza-border-box: #7573732a;
+  --box-shadow-animation: #cccccc83;
+  --subtitulo: #494848cc;
+  --vermelho: red;
 }
-
-.bg-azul{
-    background-color: #2BBDEE;
-}
-
-.bg-branco-1{
-    background-color: #f8fdff;
-}
-
-.texto-branco{
-    color: #F1F5F9;
-}
-
-.bg-branco-escurecido{
-    background-color: #F1F5F9;
-}
-
-
-html, body { height: 100%; }
-body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }

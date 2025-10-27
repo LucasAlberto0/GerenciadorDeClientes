@@ -1,5 +1,5 @@
 section{
-    color: #FFFAFA;
+    color: var(--branco-principal);
     display: flex;
     justify-content: center;
     max-height: 550px;
@@ -11,9 +11,9 @@ section{
         max-height: 500px;
         max-width: 1200px;
         width: 100%;
-        background-color: #f8fdff;
-        border: 1px solid #7573732a;
-        box-shadow: 5px 5px #cccccc83;
+        background-color: var(--branco-fundo);
+        border: 1px solid var(--cinza-border-box);
+        box-shadow: 5px 5px var(--box-shadow-animation);
         .div-titulo-da-tabela{
             display: flex;
             justify-content: space-between;
@@ -26,12 +26,12 @@ section{
             flex-direction: row;
             justify-content: center;
             gap: 20px;
-            color: #111;
+            color: var(--preto);
             flex-wrap: wrap;
         }
     }
     h2{
-        color: #111;
+        color: var(--preto);
     }
 }
 

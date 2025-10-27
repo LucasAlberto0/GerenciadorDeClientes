@@ -17,7 +17,7 @@ export class GerenteService {
 
   constructor(private _http: HttpClient,) { }
 
-  private getHeaders(): HttpHeaders {
+  private obterHeaders(): HttpHeaders {
     const token = localStorage.getItem('token');
     return new HttpHeaders({
       'Authorization': `Bearer ${token}`,
@@ -30,7 +30,7 @@ export class GerenteService {
   }
 
   obterDados(): Observable<IDadosGerente> {
-    return this._http.get<{ dados: IDadosGerente }>(`${this._apiUrl}/gerente/dados`, { headers: this.getHeaders() })
+    return this._http.get<{ dados: IDadosGerente }>(`${this._apiUrl}/gerente/dados`, { headers: this.obterHeaders() })
       .pipe(
         map(resposta => resposta.dados)
       );

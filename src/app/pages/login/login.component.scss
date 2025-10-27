@@ -3,7 +3,7 @@ main {
     justify-content: center;
     align-items: center;
     height: 100vh;
-    background-color: rgba(120, 199, 230, 0.26);
+    background-color: var(--fundo-login-cadastro);
 
     form {
         display: flex;
@@ -12,20 +12,14 @@ main {
         align-items: center;
         gap: 25px;
         padding: 30px 40px;
-        background-color: #4992e617;
-        border: 1px solid #85838334;
+        background-color: var(--fundo-form-login-cadastro);
+        border: 1px solid var(--cinza-border-box);
         border-radius: 10px;
         max-width: 500px;
         width: 100%;
 
-        .error{
-            font-size: 0.7rem;
-            margin-left: 5px;
-            color: red;
-        }
-
         h1 {
-            color: #111;
+            color: var(--preto);
         }
 
         img {
@@ -41,7 +35,7 @@ main {
         }
 
         a {
-            color: #111;
+            color: var(--preto);
             font-size: 0.8rem;
         }
     }
@@ -54,7 +48,7 @@ main {
 
 .botao-login ::ng-deep .p-button {
     width: 100%;
-    background-color: #2bbdee;
+    background-color: var(--azul-principal);
     border-radius: 10px;
     font-size: 1.1rem;
     padding: 0.8rem;
@@ -70,16 +64,16 @@ p-inputtext ::ng-deep .p-inputtext,
 p-password ::ng-deep .p-inputtext {
     width: 100%;
     border-radius: 8px;
-    border: 1px solid #ccc;
-    background-color: #f9f9f9;
+    border: 1px solid var(--cinza-border-box);
+    background-color: var(--branco-fundo);
     font-size: 0.8rem;
     transition: border-color 0.3s;
 }
 
 p-inputtext ::ng-deep .p-inputtext:focus,
 p-password ::ng-deep .p-inputtext:focus {
-    border-color: #2bbdee;
-    box-shadow: 0 0 0 2px rgba(43, 189, 238, 0.2);
+    border-color: var(--azul-principal);
+    box-shadow: 0 0 0 2px var(--fundo-form-login-cadastro);
 }
 
 
@@ -97,14 +91,44 @@ p-floatlabel ::ng-deep .p-password-input {
 p-floatlabel ::ng-deep input.p-inputtext,
 p-password ::ng-deep .p-inputtext {
     border-radius: 8px;
-    border: 1px solid #ccc;
-    background-color: #f9f9f9;
+    border: 1px solid var(--cinza-border-box);
+    background-color: var(--branco-fundo);
     font-size: 1rem;
     transition: border-color 0.3s;
+
 }
 
 p-floatlabel ::ng-deep input.p-inputtext:focus,
 p-password ::ng-deep .p-inputtext:focus {
-    border-color: #2bbdee;
-    box-shadow: 0 0 0 2px rgba(43, 189, 238, 0.2);
+    border-color: var(--azul-principal);
+    box-shadow: 0 0 0 2px var(--fundo-login-cadastro);
+}
+
+@media(max-width: 490px) {
+    main {
+        height: 100dvh;
+
+        form {
+            padding: 20px 20px;
+            max-width: 360px;
+        }
+    }
+}
+
+@media(max-width: 360px) {
+    main {
+        form {
+            padding: 15px 15px;
+            max-width: 310px;
+        }
+    }
+}
+
+@media(max-width: 340px) {
+    main {
+        form {
+            padding: 15px 10px;
+            max-width: 310px;
+        }
+    }
 }

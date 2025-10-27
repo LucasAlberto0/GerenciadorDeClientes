@@ -1,7 +1,7 @@
 article {
     padding: 30px 20px;
-    border: 1px solid #7573732a;
-    border-top: 4px solid #2bbdee;
+    border: 1px solid var(--cinza-border-box);
+    border-top: 4px solid var(--azul-principal);
     border-radius: 10px;
     display: flex;
     flex-direction: column;
@@ -15,16 +15,16 @@ article {
     }
 
     &:hover {
-        box-shadow: 5px 5px #cccccc83;
+        box-shadow: 5px 5px var(--box-shadow-animation);
         transform: translateY(-5px) !important;
 
         h2 {
-            color: #2bbdee;
+            color: var(--azul-principal);
         }
     }
 
     .titulo-empresa {
-        color: rgb(83, 78, 78);
+        color: var(--subtitulo);
         display: flex;
         align-items: center;
         gap: 3px;
@@ -50,7 +50,7 @@ article {
             display: flex;
             align-items: center;
             gap: 7px;
-            color: rgb(83, 78, 78);
+            color: var(--subtitulo);
 
             .fundo-img {
                 padding: 5px;
@@ -69,7 +69,7 @@ article {
         .div-button {
             display: flex;
             gap: 6px;
-            border-top: 1px solid #7573732a;
+            border-top: 1px solid var(--cinza-border-box);
             padding-top: 14px;
 
             button {
@@ -81,7 +81,7 @@ article {
                 background-color: transparent;
                 padding: 5px;
                 border-radius: 7px;
-                border: 1px solid #7573732a;
+                border: 1px solid var(--cinza-border-box);
                 transition: all ease 0.4s;
 
                 &:hover img {
@@ -98,15 +98,15 @@ article {
 
             .button-excluir {
                 &:hover {
-                    background-color: red;
-                    color: #f8fdff;
+                    background-color: var(--vermelho);
+                    color: var(--branco-fundo);
                 }
             }
 
             .button-editar {
                 &:hover {
-                    background-color: #2bbdee;
-                    color: #f8fdff;
+                    background-color: var(--azul-principal);
+                    color: var(--branco-fundo);
                 }
             }
 

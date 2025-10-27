@@ -3,14 +3,15 @@ header {
     display: flex;
     justify-content: center;
     padding: 10px 10px;
-    border-bottom: 1px solid #85838334;
+    border-bottom: 1px solid var(--cinza-border-box);
+    background-color: var(--branco-fundo);
     article {
         max-width: 1200px;
         width: 100%;
         display: flex;
         justify-content: space-between;
         align-items: center;
-        color: #FFFAFA;
+        color: var(--branco-principal);
         .logo-img{
             width: 100px;
             height: 60px;
@@ -21,19 +22,19 @@ header {
             gap: 25px;
         }
         .button-comecar{
-            background-color: #2BBDEE;
+            background-color: var(--azul-principal);
             border-radius: 10px;
             padding: 10px;
-            color: #FFFAFA;
+            color: var(--branco-principal);
             transition: all ease 0.4s;
             &:hover{
                 scale: 1.1;
-                background-color: #7ed3f0;
+                background-color: var(--azul-hover);
             }
         }
 
         button {
-            color: #111;
+            color: var(--preto);
             display: flex;
             align-items: center;
             gap: 10px;
@@ -80,7 +81,7 @@ header {
             max-width: 600px;
             .logo-img{
                 width: 90px;
-                height: 40px;
+                height: 50px;
             }
             button {
                 font-size: 0.8rem;
@@ -111,8 +112,8 @@ header {
         article{
             max-width: 390px;
             .logo-img{
-                width: 80px;
-                height: 35px;
+                width: 65px;
+                height: 38px;
             }
         }
     }

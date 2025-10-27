@@ -1,16 +1,16 @@
 form {
-    background-color: #FFFAFA;
+    background-color: var(--branco-principal);
     padding: 20px;
-    border-top: 5px solid #2bbdee;
-    border-bottom: 5px solid #2bbdee;
+    border-top: 5px solid var(--azul-principal);
+    border-bottom: 5px solid var(--azul-principal);
 
     h2 {
-        color: #111;
+        color: var(--preto);
         margin-bottom: 3px;
     }
 
     p {
-        color: #504d4da4;
+        color: var(--subtitulo);
     }
 }
 
@@ -21,40 +21,34 @@ form {
     overflow-y: auto;
 
     mat-label {
-        color: #FFFAFA;
+        color: var(--branco-principal);
     }
 
     input {
-        color: #111;
-        background-color: #FFFAFA;
-        border: 2px solid #b5afaf5d;
+        color: var(--preto);
+        background-color: var(--branco-principal);
+        border: 2px solid var(--cinza-border-box);
         padding: 20px 10px;
         border-radius: 10px;
         transition: all ease 0.3s;
 
         &:hover {
-            border-color: #ceeef8;
+            border-color: var(--azul-hover);
         }
 
         &.invalido {
-            border-color: red;
+            border-color: var(--vermelho);
         }
 
         &:focus {
-            border-color: #2bbdee;
+            border-color: var(--azul-principal);
             outline: none;
         }
 
         &::placeholder {
-            color: #353434d0;
+            color: var(--subtitulo);
             opacity: 0.6;
         }
-    }
-
-    .div-erro {
-        color: red;
-        font-size: 12px;
-        margin-top: 2px;
     }
 }
 
@@ -62,48 +56,48 @@ form {
     display: flex;
     justify-content: flex-end;
     gap: 12px;
-    background-color: #FFFAFA;
+    background-color: var(--branco-principal);
     border: none;
 
     button {
-        background-color: #2bbdee;
-        color: #FFFAFA;
+        background-color: var(--azul-principal);
+        color: var(--branco-principal);
     }
 
     .button-cancelar {
-        background-color: #111;
+        background-color: var(--preto);
     }
 }
 
 .button-salvar {
-    background-color: #FFFAFA;
+    background-color: var(--branco-principal);
 }
 
 .input-telefone {
     ::ng-deep input {
-        color: #111;
-        background-color: #FFFAFA;
-        border: 2px solid #b5afaf5d;
+        color: var(--preto);
+        background-color: var(--branco-principal);
+        border: 2px solid var(--cinza-border-box);
         padding: 20px 10px;
         border-radius: 10px;
         font-size: small;
         width: 100%;
 
         &.invalido {
-            border-color: red;
+            border-color: var(--veremelho);
         }
 
         &:hover {
-            border-color: #ceeef8;
+            border-color: var(--azul-hover);
         }
 
         &:focus {
-            border-color: #2bbdee;
+            border-color: var(--azul-principal);
             outline: none;
         }
 
         &::placeholder {
-            color: #353434d0;
+            color: var(--subtitulo);
             opacity: 0.6;
         }
     }
