@@ -43,6 +43,7 @@ export class ModalComponent implements OnInit {
       telefone: [this.data?.cliente?.telefone || '', Validators.required],
       cidade: [this.data?.cliente?.cidade || '', Validators.required],
       status: [this.data?.cliente?.status || '', Validators.required],
+      
     });
   }
 
