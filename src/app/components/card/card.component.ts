@@ -17,14 +17,11 @@ export class CardComponent {
   constructor(private _clienteService: ClienteService, private _gerenteService: GerenteService) {}
 
   excluir(){
-    console.log('ID do cliente:', this.cliente.id);
     this._clienteService.excluirCliente(this.cliente.id).subscribe({
       next: res => {
-        console.log('cliente deletado', res);
         this.clienteDeletado.emit(this.cliente.id);
         this._gerenteService.emitirAtualizacao();
       },
-      error: err => console.log('Ocorreu um erro ao deletar', err)
     })
   }
 }

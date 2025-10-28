@@ -103,7 +103,6 @@ export class ModalComponent implements OnInit {
         }, 1000);
       },
       error: (err) => {
-        console.error('Erro ao salvar cliente', err);
         this._toast('error', 'Erro', err?.error?.message || 'Ocorreu um erro inesperado. Tente novamente.');
         this.loading = false;
       }

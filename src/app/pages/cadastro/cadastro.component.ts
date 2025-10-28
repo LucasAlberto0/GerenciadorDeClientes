@@ -81,7 +81,6 @@ export class CadastroComponent implements OnInit {
     const novoCadastro = formCadastro.getRawValue() as ICadastroGerente;
     this._gerenteService.cadastrar(novoCadastro).subscribe({
       next: (value) => {
-        console.log('Cadastro realizado', value);
         this._messageService.add({
           severity: 'success',
           summary: 'Cadastro realizado!',
@@ -93,7 +92,6 @@ export class CadastroComponent implements OnInit {
         }, 4000);
       },
       error: (err) => {
-        console.log('Erro ao cadastrar', err);
         this._messageService.add({
           severity: 'error',
           summary: 'Erro ao cadastrar',

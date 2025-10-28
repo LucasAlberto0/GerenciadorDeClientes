@@ -52,7 +52,6 @@ export class LoginComponent implements OnInit {
 
     this._authService.autenticar(email, senha).subscribe({
       next: (value) => {
-        console.log('Login realizado com sucesso!', value);
         localStorage.setItem('token', value.token);
 
         this._messageService.add({
@@ -67,8 +66,6 @@ export class LoginComponent implements OnInit {
         }, 1000);
       },
       error: (err) => {
-        console.log('Erro no login', err);
-
         this._messageService.add({
           severity: 'error',
           summary: 'Erro ao fazer login',

@@ -12,10 +12,25 @@
     <input matInput formControlName="nome" required maxlength="20" placeholder="Digite o Nome do cliente " />
 
     <input matInput formControlName="nomeDaEmpresa" required placeholder="Digite o nome da empresa" />
-
+    
+    <select id="ramoDaEmpresa" name="ramoDaEmpresa" required formControlName="ramoDaEmpresa" >
+        <option value="" disabled selected hidden>Escolha o ramo da sua empresa</option>
+        <option>Comércio</option>
+        <option>Tecnologia</option>
+        <option>Alimentação</option>
+        <option>Saúde</option>
+        <option>Indústria</option>
+        <option>Transporte</option>
+        <option>Educação</option>
+        <option>Marketing</option>
+        <option>Construção</option>
+        <option>Porto</option>
+        <option>Entretenimento</option>
+        <option>Estética</option>
+        <option>Outros</option>
+    </select>
+    
     <input matInput formControlName="email" required maxlength="40" placeholder="Digite o e-mail" />
-
-    <input matInput formControlName="ramoDaEmpresa" required maxlength="40" placeholder="Digite o ramo da empresa" />
 
     <p-inputMask formControlName="telefone" mask="(99) 99999-9999" placeholder="(11) 98888-8888"
         class="input-telefone"></p-inputMask>

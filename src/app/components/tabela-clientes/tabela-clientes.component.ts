@@ -26,11 +26,7 @@ export class TabelaClientesComponent implements OnInit {
     this._clienteService.listarClientesDoGestor().subscribe({
       next: (res) => {
         this.clientes = res.dados;
-        console.log(this.clientes);
       },
-      error: (err) => {
-        console.error('Erro ao listar clientes', err);
-      }
     })
   }
 

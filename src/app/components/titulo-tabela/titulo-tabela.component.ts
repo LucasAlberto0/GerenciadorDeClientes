@@ -34,9 +34,6 @@ export class TituloTabelaComponent implements OnInit {
       this.nomeDaEmpresa = dados.empresa;
       this.totalDeClientes = dados.totalClientes;
     },
-    error: (erro) => {
-      console.error('Erro ao carregar os dados do gerente', erro);
-    }
   });
 }
 

@@ -138,3 +138,9 @@ form {
         height: 80vh;
     }
 }
+
+@media (min-width: 1024px) and (max-height: 770px) {
+        form{
+            height: 95vh;
+        }
+}
