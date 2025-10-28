@@ -1,13 +1,10 @@
 <article class="card-animacao">
     <h2>{{cliente?.nome}}</h2>
     <div class="titulo-empresa"><img src="img/icons/empresa-icon.svg" alt="">
-        <p>{{cliente?.nomeDaEmpresa}}</p>
+        <p>{{cliente?.nomeDaEmpresa}}</p> 
     </div>
+    <div class="ramo-e-status"><p class="ramo">{{cliente?.ramoDaEmpresa}}</p> <p [ngClass]="{'status-ativo': cliente?.status === 'Ativo', 'status-negociacao': cliente?.status === 'Em Negociação', 'status-inativo': cliente?.status === 'Inativo' }">{{cliente?.status}}</p></div>
     <aside div="div-campos-do-usuario">
-        <div class="div-campo">
-            <div class="fundo-img"><img src="img/icons/trabalho-icon.svg" alt=""></div>
-            <p>{{cliente?.ramoDaEmpresa}}</p>
-        </div>
         <div class="div-campo">
             <div class="fundo-img"><img src="img/icons/email-icon.svg" alt=""></div>
             <p>{{cliente?.email}}</p>
@@ -19,10 +16,6 @@
         <div class="div-campo">
             <div class="fundo-img"><img src="img/icons/localizacao-icon.svg" alt=""></div>
             <p>{{cliente?.cidade}}</p>
-        </div>
-        <div class="div-campo">
-            <div class="fundo-img"><img src="img/icons/localizacao-icon.svg" alt=""></div>
-            <p>{{cliente?.status}}</p>
         </div>
         <div class="div-button">
             <button class="button-editar" (click)="editar.emit(cliente)"><img src="img/icons/edit-icon.svg"

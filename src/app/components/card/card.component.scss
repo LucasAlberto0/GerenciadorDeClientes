@@ -8,6 +8,7 @@ article {
     gap: 18px;
     min-width: 350px;
     transition: all ease 0.4s !important;
+    cursor: pointer;
 
     h2 {
         transition: all ease 0.3s;
@@ -36,6 +37,37 @@ article {
         img {
             width: 20px;
             height: 20px;
+        }
+    }
+
+    .ramo-e-status{
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        gap: 7px;
+        .ramo{
+            background-color: rgba(199, 193, 193, 0.164);
+            color: var(--azul-principal);
+            border-radius: 15px;
+            padding: 3px 6px;
+        }
+        .status-ativo{
+            background-color: #E8F9EF;
+            color: #16A354;
+            border-radius: 10px;
+            padding: 3px 6px;
+        }
+        .status-negociacao{
+            background-color: #FDF7E6;
+            color: #CA8A37;
+            border-radius: 10px;
+            padding: 3px 6px;
+        }
+        .status-inativo{
+            background-color: #FDECEC;
+            color: #DC2966;
+            border-radius: 10px;
+            padding: 3px 6px;
         }
     }
 
@@ -83,6 +115,7 @@ article {
                 border-radius: 7px;
                 border: 1px solid var(--cinza-border-box);
                 transition: all ease 0.4s;
+                cursor: pointer;
 
                 &:hover img {
                     filter: invert(0) brightness(1);

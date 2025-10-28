@@ -4,4 +4,8 @@ export interface IDadosGerente {
     email: string,
     empresa: string,
     totalClientes: number
+    clientesAtivos: number,
+    clientesEmNegociacao: number,
+    clientesInativos: number
+    
 }

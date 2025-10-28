@@ -1,5 +1,8 @@
-import { AfterViewInit, Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { Chart, registerables } from 'chart.js';
+import { GerenteService } from '../../services/gerente.service';
+import { IDadosGerente } from '../../interfaces/IDadosGerente';
+import { Subscription } from 'rxjs';
 Chart.register(...registerables);
 
 @Component({
@@ -8,31 +11,53 @@ Chart.register(...registerables);
   templateUrl: './grafico-status.component.html',
   styleUrl: './grafico-status.component.scss'
 })
-export class GraficoStatusComponent implements AfterViewInit{
-  ngAfterViewInit(): void {
-        const ctx = document.getElementById('myChart') as HTMLCanvasElement;
-        new Chart(ctx, {
-          type: 'pie',
-          data: {
-            labels: ['Ativo', 'Inativo', 'Em Negociação',],
-            datasets: [{
-              label: 'Clientes',
-              data: [12, 19, 3,],
-              backgroundColor: [
-                '#E8F9EF',
-                '#FDF7E6',
-                '#FDECEC',
-              ],
-              borderColor: [
-                '#2AA359',
-                '#CD8A04',
-                '#DC2626',
-              ],
-              borderWidth: 1
-            }]
-          },
-          options: {
-          }
-        });
+export class GraficoStatusComponent implements OnInit {
+
+  private _chart!: Chart;
+  private _subscription!: Subscription;
+
+  constructor(private gerenteService: GerenteService) { }
+
+  ngOnInit(): void {
+    this.iniciarGrafico();
+    this.carregarDados();
+    this._subscription = this.gerenteService.atualizarDados$.subscribe(() => this.carregarDados());
+  }
+
+  ngOnDestroy(): void {
+    this._subscription?.unsubscribe();
+  }
+
+  private iniciarGrafico(): void {
+    const ctx = document.getElementById('myChart') as HTMLCanvasElement;
+    this._chart = new Chart(ctx, {
+      type: 'bar',
+      data: {
+        labels: ['Ativo', 'Inativo', 'Em Negociação'],
+        datasets: [{
+          label: 'Clientes',
+          data: [0, 0, 0],
+          backgroundColor: ['#2BBDEE', '#0e495dff', '#a6ddefff'],
+          borderColor: ['#2BBDEE', '#0e495dff', '#a6ddefff'],
+          borderWidth: 1
+        }]
+      },
+      options: {}
+    });
+  }
+
+  private carregarDados(): void {
+    this.gerenteService.obterDados().subscribe({
+      next: (dados: IDadosGerente) => {
+        if (!this._chart) return;
+
+        this._chart.data.datasets[0].data = [
+          dados.clientesAtivos,
+          dados.clientesInativos,
+          dados.clientesEmNegociacao
+        ];
+        this._chart.update();
       }
+    });
+  }
 }

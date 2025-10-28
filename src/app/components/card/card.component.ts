@@ -1,12 +1,11 @@
 import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
-import { MatDialog } from '@angular/material/dialog';
-import { ModalComponent } from '../modal/modal.component';
 import { ClienteService } from '../../services/cliente.service';
 import { GerenteService } from '../../services/gerente.service';
+import { CommonModule } from '@angular/common';
 
 @Component({
   selector: 'app-card',
-  imports: [],
+  imports: [CommonModule],
   templateUrl: './card.component.html',
   styleUrl: './card.component.scss'
 })
@@ -16,7 +15,6 @@ export class CardComponent {
   @Output() clienteDeletado = new EventEmitter<number>();
 
   constructor(private _clienteService: ClienteService, private _gerenteService: GerenteService) {}
-
 
   excluir(){
     console.log('ID do cliente:', this.cliente.id);
