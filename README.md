@@ -16,7 +16,7 @@
 - Angular Material v20.2.9
 - PrimeNg v20.2.0
 
-## Funcionalidadee componentes
+## Funcionalidade e componentes
 - Landing Page inicial
 - Cadastro de gerente
 - Login de gerente 
