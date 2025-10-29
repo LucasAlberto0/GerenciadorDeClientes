@@ -68,3 +68,15 @@ body {
   --subtitulo: #494848cc;
   --vermelho: red;
 }
+
+::-webkit-scrollbar {
+    width: 10px;
+    background-color: #FFFAFA;
+
+}
+
+::-webkit-scrollbar-thumb {
+    width: 10px;
+    background-color: #2BBDEE;
+    border-radius: 10px;
+}
