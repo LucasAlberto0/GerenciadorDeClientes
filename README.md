@@ -16,6 +16,16 @@
 - Angular Material v20.2.9
 - PrimeNg v20.2.0
 
+## Funcionalidadee componentes
+- Landing Page inicial
+- Cadastro de gerente
+- Login de gerente 
+- Modal de Editar perfil do gerente
+- Tabela de clientes
+- Modal de criação de cliente do gerente
+- Modal de edição de clientes do gerente
+- Gráfico de status dos clientes do gerente
+
 ## Comandos para rodar o projeto (front-end) na sua máquina:
 (Certifique-se que o Node e Git estejam instalados na sua máquina!)
 
