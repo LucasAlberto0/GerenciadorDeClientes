@@ -1,4 +1,5 @@
-# Desafio Módulo 4 - Sistema de gerenciamento de clientes (Angular)(Trilha Front-End)
+# Desafio Módulo 4 - Sistema de gerenciamento de clientes 
+## (Angular) (Trilha Front-End)
 
 <img width="804" height="144" alt="image" src="https://github.com/user-attachments/assets/e6888e49-bde9-40ee-b53f-ed51945547cf" />
 
