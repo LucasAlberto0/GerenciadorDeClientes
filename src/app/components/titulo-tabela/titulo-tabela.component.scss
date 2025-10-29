@@ -30,6 +30,7 @@ section {
             justify-content: start;
             gap: 20px;
 
+
             .total-de-clientes {
                 background-color: var(--branco-fundo);
                 padding: 20px;
@@ -66,13 +67,33 @@ section {
                 background-color: var(--branco-fundo);
                 padding: 20px;
                 display: flex;
-                gap: 20px;
                 width: 300px;
                 border-radius: 15px;
                 align-items: center;
+                justify-content: space-between;
                 border: 1px solid var(--cinza-border-box);
                 box-shadow: 5px 5px var(--box-shadow-animation);
+                cursor: pointer;
                 transition: all ease 0.4s;
+
+                .espacamento-informacoes {
+                    display: flex;
+                    align-items: center;
+                    gap: 20px;
+                }
+
+                .button-editar {
+                    background-color: var(--azul-principal);
+                    padding: 5px;
+                    border-radius: 10px;
+                    cursor: pointer;
+                    border: none;
+
+                    img {
+                        width: 20px;
+                        height: 20px;
+                    }
+                }
 
                 img {
                     width: 45px;

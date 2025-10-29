@@ -5,13 +5,16 @@ import { GerenteService } from '../../services/gerente.service';
 import { MessageService } from 'primeng/api';
 import { Toast } from "primeng/toast";
 import { CommonModule } from '@angular/common';
-import { MatFormField } from '@angular/material/form-field';
 import { MatInputModule } from '@angular/material/input';
 import { MatButtonModule } from '@angular/material/button';
+import { PasswordModule } from 'primeng/password';
+import { FloatLabel, FloatLabelModule } from 'primeng/floatlabel';
+import { InputTextModule } from 'primeng/inputtext';
+import { DividerModule } from 'primeng/divider';
 
 @Component({
   selector: 'app-modal-gerente',
-  imports: [Toast, CommonModule, ReactiveFormsModule, MatInputModule, MatButtonModule],
+  imports: [Toast, CommonModule, ReactiveFormsModule, MatInputModule, MatButtonModule,PasswordModule, FloatLabelModule, FloatLabel, InputTextModule, DividerModule,],
   templateUrl: './modal-gerente.component.html',
   styleUrl: './modal-gerente.component.scss',
   providers: [MessageService]

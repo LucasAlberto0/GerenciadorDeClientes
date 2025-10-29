@@ -89,7 +89,7 @@ export class CadastroComponent implements OnInit {
         });
         setTimeout(() => {
           this._router.navigateByUrl('login');
-        }, 4000);
+        }, 3000);
       },
       error: (err) => {
         this._messageService.add({

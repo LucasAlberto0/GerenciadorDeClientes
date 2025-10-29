@@ -6,13 +6,18 @@
         </div>
         <div class="div-informacoes-conta">
             
-            <div class="informacoes-conta font-quando">
+            <div (click)="abrirModalEdicao()" class="informacoes-conta font-quando">
+                <div class="espacamento-informacoes">
                 <img src="img/icons/gerente-icon.svg" alt="">
+                
                 <div>
                     <h3>Conta</h3>
                     <h2>{{nomeDaConta}}</h2>
                     <p><img src="img/icons/empresa-icon.svg" class="img-empresa" alt=""> {{nomeDaEmpresa}}</p>
-                    <button (click)="abrirModalEdicao()">Editar</button>
+                    
+                </div></div>
+                <div>
+                    <button  class="button-editar" ><img src="img/icons/edit-icon.svg" alt=""></button>
                 </div>
             </div>
         <div class="total-de-clientes font-quando">
@@ -22,7 +27,6 @@
                 <h2>{{totalDeClientes}}</h2>
             </div>
         </div>
-
     </div>
     </article>
 </section>
