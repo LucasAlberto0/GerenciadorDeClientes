@@ -2,6 +2,8 @@ import { Injectable } from '@angular/core';
 import { enviroment } from '../../enviroments/enviroment';
 import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Observable } from 'rxjs';
+import { ICliente } from '../interfaces/ICadastroClienteInterface';
+
 
 @Injectable({
   providedIn: 'root'
@@ -23,14 +25,14 @@ export class ClienteService {
     return this._http.get(`${this._apiUrl}/Cliente/ListarClientes`, {headers: this.obterHeaders()})
   }
 
-  criarCliente(cliente: any): Observable<any> {
+  criarCliente(cliente: ICliente): Observable<ICliente> {
   const headers = this.obterHeaders();
-  return this._http.post(`${this._apiUrl}/Cliente/CriarCliente`, cliente, { headers });
+  return this._http.post<ICliente>(`${this._apiUrl}/Cliente/CriarCliente`, cliente, { headers });
 }
 
-  editarCliente(cliente: any): Observable<any> {
+  editarCliente(cliente: ICliente): Observable<ICliente> {
     const headers = this.obterHeaders();
-    return this._http.put(`${this._apiUrl}/Cliente/EditarCliente`, cliente, {headers})
+    return this._http.put<ICliente>(`${this._apiUrl}/Cliente/EditarCliente`, cliente, {headers})
   }
 
   excluirCliente(clienteId: number): Observable<any> {

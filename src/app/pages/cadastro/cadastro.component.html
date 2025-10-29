@@ -1,5 +1,5 @@
 <main>
-    <p-toast />
+    <p-toast/>
     <form [formGroup]="cadastroForm" class="font-quando" data-aos="fade-up" data-aos-duration="1000">
         <a href="/"><img src="img/logo.png" alt=""></a>
         <h1 class="font-quando-b">Cadastro</h1>
@@ -17,21 +17,19 @@
                 <label for="in_label">Nome da sua empresa</label>
             </p-floatlabel>
 
-            <p-floatlabel variant="in">
-                <p-password formControlName="senha" inputId="in_label" [toggleMask]="true" weakLabel="Muito simples"
-                    mediumLabel="Media" strongLabel="Forte" />
+            <p-floatlabel variant="in" >
+                <p-password formControlName="senha"  inputId="in_label" [toggleMask]="true" promptLabel="Digite a senha" weakLabel="Muito simples" mediumLabel="Media" strongLabel="Forte" />
                 <label for="in_label">Senha</label>
                 <ng-template #header>
-                </ng-template>
+        </ng-template>
             </p-floatlabel>
 
             <p-floatlabel variant="in">
-                <p-password formControlName="confirmarSenha" [toggleMask]="true" [feedback]="false"
-                    class="input-custom" />
+                <p-password formControlName="confirmarSenha" [toggleMask]="true" [feedback]="false" class="input-custom" />
                 <label for="over_label">Repetir a senha</label>
             </p-floatlabel>
         </div>
-        <p-button label="Cadastrar" class="botao-cadastro" (click)="cadastrar()" />
+        <p-button label="Cadastrar" class="botao-cadastro" (click)="cadastrar()"/>
         <a href="/login">Já possui uma conta?</a>
     </form>
 </main>
