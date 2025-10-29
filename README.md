@@ -1,59 +1,66 @@
-# GerenciadorDeClientes
+# Desafio Módulo 4 - Sistema de gerenciamento de clientes (Angular)(Trilha Front-End)
 
-This project was generated using [Angular CLI](https://github.com/angular/angular-cli) version 20.3.5.
+<img width="804" height="144" alt="image" src="https://github.com/user-attachments/assets/e6888e49-bde9-40ee-b53f-ed51945547cf" />
 
-## Development server
+<br>
 
-To start a local development server, run:
+<img width="200" height="200" alt="image" src="https://github.com/user-attachments/assets/38a1c173-4cfe-48a3-9ac7-4c0554fe1911" />
 
+## Tecnologias utilizadas:
+- Angular v20.3.6
+- Typescript v5.9.2
+- Sass v1.90.0
+- Aos v2.3.4
+- Chart.Js v4.5.1
+- Angular Material v20.2.9
+- PrimeNg v20.2.0
+
+## Comandos para rodar o projeto (front-end) na sua máquina:
+(Certifique-se que o Node e Git estejam instalados na sua máquina!)
+
+
+## 1º
 ```bash
-ng serve
+git clone https://github.com/LucasAlberto0/AlbertechFront.git
 ```
 
-Once the server is running, open your browser and navigate to `http://localhost:4200/`. The application will automatically reload whenever you modify any of the source files.
-
-## Code scaffolding
-
-Angular CLI includes powerful code scaffolding tools. To generate a new component, run:
-
+## 2º
 ```bash
-ng generate component component-name
+cd AlbertechFront
+code .
 ```
 
-For a complete list of available schematics (such as `components`, `directives`, or `pipes`), run:
-
+## 3º
 ```bash
-ng generate --help
+npm i
 ```
 
-## Building
-
-To build the project run:
-
+## 4º
 ```bash
-ng build
+ng s -o
 ```
 
-This will compile your project and store the build artifacts in the `dist/` directory. By default, the production build optimizes your application for performance and speed.
+## Comandos para rodar o projeto back-end (.Net) na sua máquina:
+(Certifique-se que o SDK v9 do .Net esteja instalado na sua máquina)
 
-## Running unit tests
-
-To execute unit tests with the [Karma](https://karma-runner.github.io) test runner, use the following command:
-
-```bash
-ng test
-```
-
-## Running end-to-end tests
-
-For end-to-end (e2e) testing, run:
+## 1º
 
 ```bash
-ng e2e
+git clone https://github.com/LucasAlberto0/AlbertechBack.git
 ```
 
-Angular CLI does not come with an end-to-end testing framework by default. You can choose one that suits your needs.
+## 2º
+(Cmd para atualizar o seu BD com as migrations (A api foi desenvolvido para ter compatibilidade com o PostgreSQL) 
+```bash
+dotnet ef database update
+```
 
-## Additional Resources
+## 3º 
 
-For more information on using the Angular CLI, including detailed command references, visit the [Angular CLI Overview and Command Reference](https://angular.dev/tools/cli) page.
+```bash
+dotnet run
+```
+[Link do repositório do back-end](https://github.com/LucasAlberto0/AlbertechBack.git)
+
+<br>
+<img width="2180" height="1170" alt="image" src="https://github.com/user-attachments/assets/4f6b5d0f-14e7-4999-8809-51ab6696bbbc" />
