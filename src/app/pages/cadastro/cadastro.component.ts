@@ -79,7 +79,7 @@ export class CadastroComponent implements OnInit {
     if(!formCadastro.valid) return this._toast('warn', 'Formulário inválido', 'Preencha todos os campos obrigatórios corretamente.');
 
     const novoCadastro = formCadastro.getRawValue() as ICadastroGerente;
-    this._gerenteService.cadastrar(novoCadastro).subscribe({
+    this._gerenteService.cadastrarGerente(novoCadastro).subscribe({
       next: (value) => {
         this._messageService.add({
           severity: 'success',

@@ -1,0 +1,31 @@
+<p-toast />
+<form [formGroup]="formGerente" (ngSubmit)="salvar()" class=" form-container">
+    <div>
+        <h2 class="font-quando-b" mat-dialog-title>
+            Editar seu perfil
+        </h2>
+        <p class="font-quando">
+            Atualize os seus dados
+        </p>
+    </div>
+    <input matInput formControlName="nome" required maxlength="40" placeholder="Digite o nome completo" />
+
+    <input matInput formControlName="email" required maxlength="60" placeholder="Digite o e-mail" />
+
+    <input matInput formControlName="empresa" required maxlength="60" placeholder="Digite o nome da empresa" />
+
+    <h3 class="font-quando-b" >Alterar senha (opcional)</h3>
+    <small class="font-quando">Para trocar sua senha, preencha ambos os campos abaixo</small>
+
+    <input matInput formControlName="senhaAtual" type="password" placeholder="Senha atual" />
+    <input matInput formControlName="novaSenha" type="password" placeholder="Nova senha" />
+
+    <div class="botoes">
+        <button mat-flat-button color="primary" type="submit" class="button-salvar">
+            {{ loading ? 'Salvando...' : 'Salvar Alterações' }}
+        </button>
+        <button mat-stroked-button color="warn" type="button" class="button-cancelar" (click)="cancelar()">
+            Cancelar
+        </button>
+    </div>
+</form>

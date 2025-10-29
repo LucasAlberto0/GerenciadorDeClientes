@@ -4,6 +4,7 @@ import { inject, Injectable } from '@angular/core';
 import { map, Observable, Subject } from 'rxjs';
 import { ICadastroGerente } from '../interfaces/ICadastoGerenteInterface';
 import { IDadosGerente } from '../interfaces/IDadosGerente';
+import { IEditarGerente } from '../interfaces/IEditarGerenteInterface';
 
 
 @Injectable({
@@ -25,11 +26,15 @@ export class GerenteService {
     });
   }
 
-  cadastrar(gerenteCadastro: ICadastroGerente): Observable<ICadastroGerente> {
+  cadastrarGerente(gerenteCadastro: ICadastroGerente): Observable<ICadastroGerente> {
     return this._http.post<ICadastroGerente>(`${this._apiUrl}/gerente/cadastro`, gerenteCadastro);
   }
 
-  obterDados(): Observable<IDadosGerente> {
+  editarGerente(gerenteEdicao: IEditarGerente): Observable<IEditarGerente>{
+    return this._http.put<IEditarGerente>(`${this._apiUrl}/gerente/editar`, gerenteEdicao, {headers: this.obterHeaders()})
+  }
+
+  obterDadosGerente(): Observable<IDadosGerente> {
     return this._http.get<{ dados: IDadosGerente }>(`${this._apiUrl}/gerente/dados`, { headers: this.obterHeaders() })
       .pipe(
         map(resposta => resposta.dados)

@@ -47,7 +47,7 @@ export class GraficoStatusComponent implements OnInit {
   }
 
   private carregarDados(): void {
-    this.gerenteService.obterDados().subscribe({
+    this.gerenteService.obterDadosGerente().subscribe({
       next: (dados: IDadosGerente) => {
         if (!this._chart) return;
 

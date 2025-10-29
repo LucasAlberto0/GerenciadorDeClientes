@@ -1,0 +1,146 @@
+form {
+    background-color: var(--branco-principal);
+    padding: 20px;
+    border-top: 5px solid var(--azul-principal);
+    border-bottom: 5px solid var(--azul-principal);
+
+    h2 {
+        color: var(--preto);
+        margin-bottom: 3px;
+    }
+
+    p {
+        color: var(--subtitulo);
+    }
+}
+
+.form-container {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    overflow-y: auto;
+
+    mat-label {
+        color: var(--branco-principal);
+    }
+
+    input {
+        color: var(--preto);
+        background-color: var(--branco-principal);
+        border: 2px solid var(--cinza-border-box);
+        padding: 20px 10px;
+        border-radius: 10px;
+        transition: all ease 0.3s;
+
+        &:hover {
+            border-color: var(--azul-hover);
+        }
+
+        &.invalido {
+            border-color: var(--vermelho);
+        }
+
+        &:focus {
+            border-color: var(--azul-principal);
+            outline: none;
+        }
+
+        &::placeholder {
+            color: var(--subtitulo);
+            opacity: 0.6;
+        }
+    }
+    select {
+        color: var(--preto);
+        background-color: var(--branco-principal);
+        border: 2px solid var(--cinza-border-box);
+        padding: 20px 10px;
+        border-radius: 10px;
+        transition: all ease 0.3s;
+        width: 100%;
+        font-size: 0.8rem;
+        cursor: pointer;
+
+        &:hover {
+            border-color: var(--azul-hover);
+        }
+
+        &.invalido {
+            border-color: var(--vermelho);
+        }
+
+        &:focus {
+            border-color: var(--azul-principal);
+            outline: none;
+        }
+
+        &:invalid {
+            color: var(--subtitulo);
+            opacity: 0.6;
+        }
+
+    }
+}
+
+.botoes {
+    display: flex;
+    justify-content: flex-end;
+    gap: 12px;
+    background-color: var(--branco-principal);
+    border: none;
+
+    button {
+        background-color: var(--azul-principal);
+        color: var(--branco-principal);
+    }
+
+    .button-cancelar {
+        background-color: var(--preto);
+    }
+}
+
+.button-salvar {
+    background-color: var(--branco-principal);
+}
+
+.input-telefone {
+    ::ng-deep input {
+        color: var(--preto);
+        background-color: var(--branco-principal);
+        border: 2px solid var(--cinza-border-box);
+        padding: 20px 10px;
+        border-radius: 10px;
+        font-size: small;
+        width: 100%;
+
+        &.invalido {
+            border-color: var(--vermelho);
+        }
+
+        &:hover {
+            border-color: var(--azul-hover);
+        }
+
+        &:focus {
+            border-color: var(--azul-principal);
+            outline: none;
+        }
+
+        &::placeholder {
+            color: var(--subtitulo);
+            opacity: 0.6;
+        }
+    }
+}
+
+@media (max-width: 480px) {
+    form {
+        height: 80vh;
+    }
+}
+
+@media (min-width: 1024px) and (max-height: 770px) {
+        form{
+            height: 95vh;
+        }
+}

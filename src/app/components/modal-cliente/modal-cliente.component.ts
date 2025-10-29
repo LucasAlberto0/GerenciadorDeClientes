@@ -12,19 +12,19 @@ import { Toast } from "primeng/toast";
 import { InputMaskModule } from 'primeng/inputmask';
 
 @Component({
-  selector: 'app-modal',
+  selector: 'app-modal-cliente',
   imports: [CommonModule, ReactiveFormsModule, MatFormFieldModule, MatInputModule, MatButtonModule, Toast, InputMaskModule],
-  templateUrl: './modal.component.html',
-  styleUrl: './modal.component.scss',
+  templateUrl: './modal-cliente.component.html',
+  styleUrl: './modal-cliente.component.scss',
   providers: [MessageService]
 })
-export class ModalComponent implements OnInit {
+export class ModalClienteComponent implements OnInit {
   formCliente!: FormGroup;
   modoEdicao = false;
   loading: boolean = false;
 
   constructor(
-    private _dialogRef: MatDialogRef<ModalComponent>,
+    private _dialogRef: MatDialogRef<ModalClienteComponent>,
     private _clienteService: ClienteService,
     private _fb: FormBuilder,
     private _gerenteService: GerenteService,
