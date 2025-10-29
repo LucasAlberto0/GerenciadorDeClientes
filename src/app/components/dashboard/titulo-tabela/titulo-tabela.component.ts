@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
-import { GerenteService } from '../../services/gerente.service';
-import { IDadosGerente } from '../../interfaces/IDadosGerente';
+import { GerenteService } from '../../../services/gerente.service';
+import { IDadosGerente } from '../../../interfaces/IDadosGerente';
 import { Subscription } from 'rxjs';
 import { ModalClienteComponent } from '../modal-cliente/modal-cliente.component';
 import { MatDialog } from '@angular/material/dialog';

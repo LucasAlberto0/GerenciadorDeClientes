@@ -1,0 +1,27 @@
+<main>
+    <section data-aos="fade-down" data-aos-easing="linear" data-aos-duration="1000">
+        <div class="titulo">
+            <h1 class="font-quando-b">Empresas que <span>adoram</span> o Albertech</h1>
+            <p class="font-quando">Histórias reais de sucesso com o Albertech</p>
+        </div>
+        <div class="cards">
+            @for (usuario of usuarios; track $index) {
+            <div class="card font-quando">
+                <div class="estrelas">
+                    @for (estrela of [].constructor(usuario.estrela); track $index) {
+                    <img src="img/icons/estrela-icon.svg" alt="">
+                    }
+
+                </div>
+                <div class="feedback">
+                    {{usuario.feedback}}
+                </div>
+                <div class="autor">
+                    <h3>{{usuario.autor}}</h3>
+                    <p>{{usuario.subtitulo}}</p>
+                </div>
+            </div>
+            }
+        </div>
+    </section>
+</main>

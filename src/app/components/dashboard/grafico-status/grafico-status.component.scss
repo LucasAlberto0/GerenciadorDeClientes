@@ -30,6 +30,12 @@ section{
 
 }
 
+@media(max-width: 1300px){
+    section{
+        max-width: 900px;
+    }
+}
+
 @media(max-width: 1069px) {
     section {
             max-width: 850px;

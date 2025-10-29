@@ -1,7 +1,7 @@
 import { Component, Inject, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, ReactiveFormsModule, Validators } from '@angular/forms';
 import { MAT_DIALOG_DATA, MatDialogRef } from '@angular/material/dialog';
-import { GerenteService } from '../../services/gerente.service';
+import { GerenteService } from '../../../services/gerente.service';
 import { MessageService } from 'primeng/api';
 import { Toast } from "primeng/toast";
 import { CommonModule } from '@angular/common';

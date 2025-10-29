@@ -1,9 +1,9 @@
 import { Component, OnInit } from '@angular/core';
-import { BotaoAzulComponent } from "../botao-azul/botao-azul.component";
+import { BotaoAzulComponent } from "../../reutilizavel/botao-azul/botao-azul.component";
 import { CardComponent } from "../card/card.component";
 import { MatDialog } from '@angular/material/dialog';
 import { ModalClienteComponent } from '../modal-cliente/modal-cliente.component';
-import { ClienteService } from '../../services/cliente.service';
+import { ClienteService } from '../../../services/cliente.service';
 import { CommonModule } from '@angular/common';
 
 

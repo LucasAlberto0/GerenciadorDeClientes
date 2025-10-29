@@ -84,10 +84,12 @@ section {
 
                 .button-editar {
                     background-color: var(--azul-principal);
-                    padding: 5px;
+                    padding: 6px;
                     border-radius: 10px;
                     cursor: pointer;
                     border: none;
+                    display: flex;
+                    align-items: center;
 
                     img {
                         width: 20px;

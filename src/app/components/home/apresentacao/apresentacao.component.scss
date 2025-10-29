@@ -1,7 +1,7 @@
 main {
     display: flex;
     justify-content: center;
-    height: 100%;
+    height: 95vh;
     background-color: var(--branco-fundo);
 }
 
@@ -12,7 +12,7 @@ section {
     justify-content: center;
     align-items: center;
     gap: 60px;
-    margin: 25px 0px;
+    
 }
 
 article {
@@ -176,7 +176,7 @@ article {
         justify-content: center;
         align-items: center;
         max-width: 700px;
-
+        text-align: center;
         h3 {
             font-size: 1.1rem;
             text-align: center;
@@ -187,7 +187,7 @@ article {
 @media(max-width: 991px) {
     article {
         h1 {
-            font-size: 2.9rem;
+            font-size: 2.4rem;
             text-align: center;
         }
 
@@ -241,11 +241,6 @@ article {
     }
 
     article {
-        button {
-            padding: 4px 10px;
-            font-size: 0.7rem;
-        }
-
         h1 {
             font-size: 2rem;
         }
@@ -254,6 +249,12 @@ article {
             font-size: 0.9rem;
             text-align: center;
         }
+        button {
+            padding: 4px 10px;
+            font-size: 0.7rem;
+        }
+
+        
 
         .grupo-button {
             gap: 18px;
@@ -266,6 +267,9 @@ article {
 }
 
 @media(max-width: 550px) {
+    main{
+        height: 100%;
+    }
     section {
         max-width: 390px;
         gap: 40px;

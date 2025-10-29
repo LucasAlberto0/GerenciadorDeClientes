@@ -1,6 +1,6 @@
 import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
-import { ClienteService } from '../../services/cliente.service';
-import { GerenteService } from '../../services/gerente.service';
+import { ClienteService } from '../../../services/cliente.service';
+import { GerenteService } from '../../../services/gerente.service';
 import { CommonModule } from '@angular/common';
 
 @Component({
