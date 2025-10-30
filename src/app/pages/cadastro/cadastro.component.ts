@@ -7,10 +7,10 @@ import { FloatLabel, FloatLabelModule } from 'primeng/floatlabel';
 import { InputTextModule } from 'primeng/inputtext';
 import { PasswordModule } from 'primeng/password';
 import { ICadastroGerente } from '../../interfaces/ICadastoGerenteInterface';
-import { GerenteService } from '../../services/gerente.service';
+import { GerenteService } from '../../services/gerente/gerente.service';
 import { ToastModule } from 'primeng/toast';
 import { MessageService } from 'primeng/api';
-
+import { ErroService } from '../../services/erro/erro.service';
 @Component({
   selector: 'app-cadastro',
   imports: [ButtonModule, FormsModule, PasswordModule, FloatLabelModule, FloatLabel, InputTextModule, DividerModule, ReactiveFormsModule, ToastModule],
@@ -27,7 +27,8 @@ export class CadastroComponent implements OnInit {
   constructor(
     private _fb: FormBuilder,
     private _gerenteService: GerenteService,
-    private _messageService: MessageService
+    private _messageService: MessageService,
+    private _erroService: ErroService
   ) { }
 
   ngOnInit(): void {
@@ -95,7 +96,7 @@ export class CadastroComponent implements OnInit {
         this._messageService.add({
           severity: 'error',
           summary: 'Erro ao cadastrar',
-          detail: err?.error?.message || 'Ocorreu um erro inesperado. Tente novamente.',
+          detail: this._erroService.obterMensagem(),
           life: 4000
         });
       }

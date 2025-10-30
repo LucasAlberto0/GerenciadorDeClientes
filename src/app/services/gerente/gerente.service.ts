@@ -1,10 +1,10 @@
-import { enviroment } from './../../enviroments/enviroment';
+import { enviroment } from '../../../enviroments/enviroment';
 import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { inject, Injectable } from '@angular/core';
 import { map, Observable, Subject } from 'rxjs';
-import { ICadastroGerente } from '../interfaces/ICadastoGerenteInterface';
-import { IDadosGerente } from '../interfaces/IDadosGerente';
-import { IEditarGerente } from '../interfaces/IEditarGerenteInterface';
+import { ICadastroGerente } from '../../interfaces/ICadastoGerenteInterface';
+import { IDadosGerente } from '../../interfaces/IDadosGerente';
+import { IEditarGerente } from '../../interfaces/IEditarGerenteInterface';
 
 
 @Injectable({

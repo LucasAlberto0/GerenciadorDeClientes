@@ -1,9 +1,8 @@
 import { Injectable } from '@angular/core';
-import { enviroment } from '../../enviroments/enviroment';
+import { enviroment } from '../../../enviroments/enviroment';
 import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Observable } from 'rxjs';
-import { ICliente } from '../interfaces/ICadastroClienteInterface';
-
+import { ICliente } from '../../interfaces/ICadastroClienteInterface';
 
 @Injectable({
   providedIn: 'root'

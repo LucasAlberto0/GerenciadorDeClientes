@@ -5,11 +5,12 @@ import { FloatLabelModule } from 'primeng/floatlabel';
 import { PasswordModule } from 'primeng/password';
 import { FloatLabel } from 'primeng/floatlabel';
 import { InputTextModule } from 'primeng/inputtext';
-import { AutenticacaoService } from '../../services/autenticacao.service';
+import { AutenticacaoService } from '../../services/autenticacao/autenticacao.service';
 import { MessageModule } from 'primeng/message';
 import { Router } from '@angular/router';
 import { MessageService } from 'primeng/api';
 import { ToastModule } from 'primeng/toast';
+import { ErroService } from '../../services/erro/erro.service';
 
 
 @Component({
@@ -24,7 +25,7 @@ export class LoginComponent implements OnInit {
   loginForm!: FormGroup;
   private _router = inject(Router);
   clickLogar: boolean = false;
-  constructor(private _fb: FormBuilder, private _authService: AutenticacaoService, private _messageService: MessageService) { }
+  constructor(private _fb: FormBuilder, private _authService: AutenticacaoService, private _messageService: MessageService, private _erroService: ErroService) { }
 
   ngOnInit(): void {
     this.loginForm = this._fb.group({
@@ -69,7 +70,7 @@ export class LoginComponent implements OnInit {
         this._messageService.add({
           severity: 'error',
           summary: 'Erro ao fazer login',
-          detail: err?.error?.message || 'Credenciais inválidas. Tente novamente.',
+          detail: this._erroService.obterMensagem() || 'Credenciais inválidas. Tente novamente.',
           life: 3000
         });
       }

@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { Chart, registerables } from 'chart.js';
-import { GerenteService } from '../../../services/gerente.service';
+import { GerenteService } from '../../../services/gerente/gerente.service';
 import { IDadosGerente } from '../../../interfaces/IDadosGerente';
 import { Subscription } from 'rxjs';
 Chart.register(...registerables);

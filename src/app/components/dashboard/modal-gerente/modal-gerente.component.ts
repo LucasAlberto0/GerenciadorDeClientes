@@ -1,7 +1,7 @@
 import { Component, Inject, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, ReactiveFormsModule, Validators } from '@angular/forms';
 import { MAT_DIALOG_DATA, MatDialogRef } from '@angular/material/dialog';
-import { GerenteService } from '../../../services/gerente.service';
+import { GerenteService } from '../../../services/gerente/gerente.service';
 import { MessageService } from 'primeng/api';
 import { Toast } from "primeng/toast";
 import { CommonModule } from '@angular/common';
@@ -11,6 +11,7 @@ import { PasswordModule } from 'primeng/password';
 import { FloatLabel, FloatLabelModule } from 'primeng/floatlabel';
 import { InputTextModule } from 'primeng/inputtext';
 import { DividerModule } from 'primeng/divider';
+import { ErroService } from '../../../services/erro/erro.service';
 
 @Component({
   selector: 'app-modal-gerente',
@@ -28,6 +29,7 @@ export class ModalGerenteComponent implements OnInit {
     private _gerenteService: GerenteService,
     private _fb: FormBuilder,
     private _messageService: MessageService,
+    private _erroService: ErroService,
     @Inject(MAT_DIALOG_DATA) public data: any
   ) { }
 
@@ -73,7 +75,7 @@ export class ModalGerenteComponent implements OnInit {
         }, 1000);
       },
       error: (err) => {
-        this._toast('error', 'Erro', err?.error?.mensagem || 'Ocorreu um erro inesperado.');
+        this._toast('error', 'Erro', this._erroService.obterMensagem());
         this.loading = false;
       }
     });

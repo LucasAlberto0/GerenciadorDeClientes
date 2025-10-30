@@ -5,11 +5,12 @@ import { MatFormFieldModule } from '@angular/material/form-field';
 import { MatInputModule } from '@angular/material/input';
 import { MatButtonModule } from '@angular/material/button';
 import { MAT_DIALOG_DATA, MatDialogRef } from '@angular/material/dialog';
-import { ClienteService } from '../../../services/cliente.service';
-import { GerenteService } from '../../../services/gerente.service';
+import { ClienteService } from '../../../services/cliente/cliente.service';
+import { GerenteService } from '../../../services/gerente/gerente.service';
 import { MessageService } from 'primeng/api';
 import { Toast } from "primeng/toast";
 import { InputMaskModule } from 'primeng/inputmask';
+import { ErroService } from '../../../services/erro/erro.service';
 
 @Component({
   selector: 'app-modal-cliente',
@@ -29,6 +30,7 @@ export class ModalClienteComponent implements OnInit {
     private _fb: FormBuilder,
     private _gerenteService: GerenteService,
     private _messageService: MessageService,
+    private _erroService: ErroService,
     @Inject(MAT_DIALOG_DATA) public data: any
   ) { }
 
@@ -103,7 +105,7 @@ export class ModalClienteComponent implements OnInit {
         }, 1000);
       },
       error: (err) => {
-        this._toast('error', 'Erro', err?.error?.message || 'Ocorreu um erro inesperado. Tente novamente.');
+        this._toast('error', 'Erro', this._erroService.obterMensagem());
         this.loading = false;
       }
     });
