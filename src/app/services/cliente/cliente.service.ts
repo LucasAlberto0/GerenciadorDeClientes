@@ -8,7 +8,7 @@ import { ICliente } from '../../interfaces/ICadastroClienteInterface';
   providedIn: 'root'
 })
 export class ClienteService {
-  private _apiUrl: string = enviroment.apiUrl;
+  private _apiUrl: string = enviroment.apiUrlProd;
 
   constructor(private _http: HttpClient) {}
 

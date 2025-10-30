@@ -1,3 +1,4 @@
 export const enviroment = {
-    apiUrl: 'http://localhost:5073'
+    apiUrlProd: 'https://albertechback.onrender.com',
+    apiUrlDev: 'http://localhost:5073'
 };

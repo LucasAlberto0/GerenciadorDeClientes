@@ -12,7 +12,7 @@ import { IEditarGerente } from '../../interfaces/IEditarGerenteInterface';
 })
 export class GerenteService {
 
-  private _apiUrl = enviroment.apiUrl;
+  private _apiUrl = enviroment.apiUrlProd;
 
   private _autalizarDados$ = new Subject<void>();
 

@@ -8,7 +8,7 @@ import { Observable } from 'rxjs';
 })
 export class AutenticacaoService {
 
-  private _apiUrl: string = enviroment.apiUrl; 
+  private _apiUrl: string = enviroment.apiUrlProd; 
 
   constructor(private _http: HttpClient) {}
 
