@@ -357,7 +357,11 @@ article {
 }
 
 @media (min-width: 1024px) and (max-height: 770px) {
+    main{
+        height: 100%;
+    }
     article {
+        margin-top: 30px;
         h1 {
             font-size: 3.3rem;
         }
