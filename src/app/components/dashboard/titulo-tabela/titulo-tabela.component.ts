@@ -4,10 +4,11 @@ import { IDadosGerente } from '../../../interfaces/IDadosGerente';
 import { Subscription } from 'rxjs';
 import { MatDialog } from '@angular/material/dialog';
 import { ModalGerenteComponent } from '../modal-gerente/modal-gerente.component';
+import { Skeleton } from 'primeng/skeleton';
 
 @Component({
   selector: 'app-titulo-tabela',
-  imports: [],
+  imports: [Skeleton],
   templateUrl: './titulo-tabela.component.html',
   styleUrl: './titulo-tabela.component.scss'
 })
@@ -17,6 +18,7 @@ export class TituloTabelaComponent implements OnInit {
   nomeDaEmpresa: string = '';
   emailGerente: string = '';
   totalDeClientes: number = 0;
+  loading: boolean = true;
 
   private _sub!: Subscription;
 
@@ -37,7 +39,11 @@ export class TituloTabelaComponent implements OnInit {
       this.nomeDaEmpresa = dados.empresa;
       this.emailGerente = dados.email;
       this.totalDeClientes = dados.totalClientes;
+      this.loading = false;
     },
+    error: () => {
+      this.loading = false;
+    }
   });
 }
 

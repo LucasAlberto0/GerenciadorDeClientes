@@ -12,8 +12,14 @@
                 
                 <div>
                     <h3>Conta</h3>
-                    <h2>{{nomeDaConta}}</h2>
-                    <p><img src="img/icons/empresa-icon.svg" class="img-empresa" alt=""> {{nomeDaEmpresa}}</p>
+                    
+                    @if(!loading){
+                        <h2>{{nomeDaConta}}</h2>
+                        <p><img src="img/icons/empresa-icon.svg" class="img-empresa" alt=""> {{nomeDaEmpresa}}</p>
+                    }@else{
+                        <p-skeleton height="2rem" width="6rem" class="mb-2"/>
+                    }
+                    
                     
                 </div></div>
                 <div>
@@ -24,7 +30,11 @@
             <img src="img/icons/usuarios-icon.svg" alt="">
             <div>
                 <h3>Total de Clientes</h3>
-                <h2>{{totalDeClientes}}</h2>
+                @if(!loading){
+                    <h2>{{totalDeClientes}}</h2>
+                }@else {
+                    <p-skeleton height="2rem" width="6rem" class="mb-2"/>
+                }
             </div>
         </div>
     </div>

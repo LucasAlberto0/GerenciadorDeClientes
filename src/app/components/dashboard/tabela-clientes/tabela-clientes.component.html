@@ -2,12 +2,17 @@
     <article data-aos="zoom-in" data-aos-duration="1500">
         <div class="div-titulo-da-tabela">
             <h2 class="font-quando-b">Lista de Clientes</h2>
-            <app-botao-azul (clicado)="abrirModal()" icone="img/icons/plus-icon.svg" texto="Criar Cliente"/>
+            <app-botao-azul (clicado)="abrirModal()" icone="img/icons/plus-icon.svg" texto="Criar Cliente" />
         </div>
         <div class="div-cards">
-            @for (clientes of clientes; track $index) {
-                <app-card [cliente]="clientes" (editar)="abrirModal(clientes)" (clienteDeletado)="removerCliente($event)"/>
-            }      
+            @if(!loading){
+                @for (clientes of clientes; track $index) {
+                    <app-card [cliente]="clientes" (editar)="abrirModal(clientes)" (clienteDeletado)="removerCliente($event)" />
+                }
+            }@else {
+                <p-skeleton height="2rem" width="100%" class="mb-2"/>
+            }
+
         </div>
     </article>
 </section>

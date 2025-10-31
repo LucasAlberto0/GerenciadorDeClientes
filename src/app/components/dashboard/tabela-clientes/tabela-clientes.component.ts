@@ -5,16 +5,18 @@ import { MatDialog } from '@angular/material/dialog';
 import { ModalClienteComponent } from '../modal-cliente/modal-cliente.component';
 import { ClienteService } from '../../../services/cliente/cliente.service';
 import { CommonModule } from '@angular/common';
+import { Skeleton } from "primeng/skeleton";
 
 
 @Component({
   selector: 'app-tabela-clientes',
-  imports: [BotaoAzulComponent, CardComponent, CommonModule],
+  imports: [BotaoAzulComponent, CardComponent, CommonModule, Skeleton],
   templateUrl: './tabela-clientes.component.html',
   styleUrl: './tabela-clientes.component.scss'
 })
 export class TabelaClientesComponent implements OnInit {
   clientes: any[] = [];
+  loading: boolean = true;
 
   constructor(private _dialog: MatDialog, private _clienteService: ClienteService) { }
 
@@ -26,7 +28,11 @@ export class TabelaClientesComponent implements OnInit {
     this._clienteService.listarClientesDoGestor().subscribe({
       next: (res) => {
         this.clientes = res.dados;
+        this.loading = false;
       },
+      error: () => {
+        this.loading = false;
+      }
     })
   }
 

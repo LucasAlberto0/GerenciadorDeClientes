@@ -11,12 +11,13 @@ import { GerenteService } from '../../services/gerente/gerente.service';
 import { ToastModule } from 'primeng/toast';
 import { MessageService } from 'primeng/api';
 import { ErroService } from '../../services/erro/erro.service';
+import { SkeletonModule } from 'primeng/skeleton';
 @Component({
   selector: 'app-cadastro',
   imports: [ButtonModule, FormsModule, PasswordModule, FloatLabelModule, FloatLabel, InputTextModule, DividerModule, ReactiveFormsModule, ToastModule],
   templateUrl: './cadastro.component.html',
   styleUrl: './cadastro.component.scss',
-  providers: [MessageService]
+  providers: [MessageService, SkeletonModule]
 })
 export class CadastroComponent implements OnInit {
 
@@ -111,7 +112,6 @@ export class CadastroComponent implements OnInit {
 
   load(time = 1000000) {
         this.loading = true;
-
         setTimeout(() => {
             this.loading = false
         }, time);
