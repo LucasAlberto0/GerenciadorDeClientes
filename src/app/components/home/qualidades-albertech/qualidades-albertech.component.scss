@@ -1,0 +1,218 @@
+main {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 40px 0px;
+    background-color: var(--branco-fundo);
+}
+
+section {
+    max-width: 1200px;
+    width: 100%;
+    background-color: var(--fundo-form-login-cadastro);
+    padding: 70px 10px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 40px;
+
+    .titulo {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-direction: column;
+        gap: 6px;
+
+        h1 {
+            font-size: 2.8rem;
+            line-height: normal;
+
+            span {
+                color: var(--azul-principal);
+            }
+        }
+
+        p {
+            font-size: 1rem;
+            color: var(--subtitulo);
+            text-align: center;
+        }
+    }
+
+    .cards {
+        display: flex;
+        gap: 18px;
+        justify-content: center;
+        flex-wrap: wrap;
+
+        .card {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            max-width: 270px;
+            gap: 8px;
+            padding: 15px;
+            background-color: var(--branco-fundo);
+            border-radius: 10px;
+            border: solid 2px var(--cinza-border-box);
+            transition: all ease 0.4s;
+
+            &:hover{
+                scale: 1.05;
+                box-shadow: 8px 8px var(--box-shadow-animation);
+            }
+
+            &:hover .fundo-img{
+                transform: rotate(5deg);
+            }
+
+            .fundo-img {
+                background-color: var(--azul-principal);
+                padding: 10px;
+                border-radius: 10px;
+                display: flex;
+                align-items: center;
+                transition: all ease 0.4s;
+                img {
+                    width: 30px;
+                    height: 30px;
+                }
+            }
+            p{
+                color: var(--subtitulo);
+                font-size: 0.8rem;
+            }
+        }
+    }
+}
+
+@media(max-width: 1300px) {
+    section {
+        max-width: 900px;
+
+        .titulo {
+            h1 {
+                font-size: 2.5rem;
+            }
+        }
+
+        .cards {
+            gap: 8px;
+
+            .card {
+                max-width: 290px;
+            }
+        }
+    }
+
+}
+
+@media(max-width: 1069px) {
+    section {
+        max-width: 850px;
+
+        .titulo {
+            h1 {
+                font-size: 2.2rem;
+            }
+
+            p {
+                font-size: 0.9rem;
+            }
+        }
+
+        .cards {
+            gap: 14px;
+
+            .card {
+                max-width: 350px;
+            }
+        }
+    }
+}
+
+@media(max-width: 991px) {
+    section {
+        max-width: 700px;
+
+        .titulo {
+            h1 {
+                font-size: 2rem;
+            }
+        }
+    }
+}
+
+@media(max-width: 768px) {
+    section {
+        max-width: 600px;
+
+        .titulo {
+            h1 {
+                font-size: 1.7rem;
+            }
+        }
+    }
+}
+
+@media(max-width: 650px) {
+    section {
+        max-width: 490px;
+
+        .titulo {
+            h1 {
+                font-size: 1.5rem;
+                text-align: center;
+            }
+        }
+    }
+}
+
+@media(max-width: 550px) {
+    section {
+        max-width: 390px;
+        gap: 28px;
+
+        .titulo {
+            p {
+                font-size: 0.8rem;
+            }
+        }
+
+        .cards {
+            .card {
+                padding: 15px;
+            }
+        }
+
+    }
+}
+
+@media(max-width: 400px) {
+    section {
+        max-width: 350px;
+    }
+}
+
+@media(max-width: 350px) {
+    section {
+        max-width: 320px;
+        padding: 70px 5px;
+
+        .cards {
+            .card {
+                scale: 0.9;
+            }
+        }
+
+    }
+}
+
+@media (min-width: 1024px) and (max-height: 770px) {
+    main{
+        margin-top: 50px;
+    }
+
+}
