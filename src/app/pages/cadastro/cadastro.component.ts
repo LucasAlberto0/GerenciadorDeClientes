@@ -23,6 +23,7 @@ export class CadastroComponent implements OnInit {
   cadastroForm!: FormGroup;
   value!: string | undefined;
   private _router = inject(Router);
+  loading: boolean = false;
 
   constructor(
     private _fb: FormBuilder,
@@ -105,5 +106,14 @@ export class CadastroComponent implements OnInit {
 
   private _toast(severity: 'success' | 'info' | 'warn' | 'error', summary: string, detail: string) {
     this._messageService.add({ severity, summary, detail, life: 3000 });
+    this.load(0);
   }
+
+  load(time = 1000000) {
+        this.loading = true;
+
+        setTimeout(() => {
+            this.loading = false
+        }, time);
+    }
 }

@@ -29,7 +29,7 @@
                 <label for="over_label">Repetir a senha</label>
             </p-floatlabel>
         </div>
-        <p-button label="Cadastrar" class="botao-cadastro" (click)="cadastrar()"/>
+        <p-button label="Cadastrar"  [loading]="loading" (onClick)="load()" class="botao-cadastro" (click)="cadastrar()"/>
         <a href="/login">Já possui uma conta?</a>
     </form>
 </main>

@@ -26,6 +26,7 @@ export class LoginComponent implements OnInit {
   private _router = inject(Router);
   clickLogar: boolean = false;
   constructor(private _fb: FormBuilder, private _authService: AutenticacaoService, private _messageService: MessageService, private _erroService: ErroService) { }
+  loading: Boolean = false;
 
   ngOnInit(): void {
     this.loginForm = this._fb.group({
@@ -65,20 +66,31 @@ export class LoginComponent implements OnInit {
         setTimeout(() => {
           this._router.navigateByUrl('/dashboard');
         }, 1000);
+
+        this.load(0);
       },
       error: (err) => {
         this._messageService.add({
           severity: 'error',
           summary: 'Erro ao fazer login',
           detail: this._erroService.obterMensagem() || 'Credenciais inválidas. Tente novamente.',
-          life: 3000
+          life: 3000,
         });
+        this.load(0);
       }
     });
     this.clickLogar = false;
   }
 
   private _toast(severity: 'success' | 'info' | 'warn' | 'error', summary: string, detail: string) {
-    this._messageService.add({ severity, summary, detail, life: 3000 });
+    this._messageService.add({ severity, summary, detail, life: 3000, });
+    this.load(0);
   }
+  load(time = 1000000) {
+        this.loading = true;
+
+        setTimeout(() => {
+            this.loading = false
+        }, time);
+    }
 }
