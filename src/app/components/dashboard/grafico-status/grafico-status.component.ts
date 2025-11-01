@@ -29,7 +29,7 @@ export class GraficoStatusComponent implements OnInit {
   }
 
   private iniciarGrafico(): void {
-    const ctx = document.getElementById('myChart') as HTMLCanvasElement;
+    const ctx = document.getElementById('graficoStatus') as HTMLCanvasElement;
     this._chart = new Chart(ctx, {
       type: 'bar',
       data: {

@@ -4,10 +4,11 @@ import { TabelaClientesComponent } from '../../components/dashboard/tabela-clien
 import { TituloTabelaComponent } from "../../components/dashboard/titulo-tabela/titulo-tabela.component";
 import { Router } from '@angular/router';
 import { GraficoStatusComponent } from "../../components/dashboard/grafico-status/grafico-status.component";
+import { GraficoCidadesComponent } from "../../components/dashboard/grafico-cidades/grafico-cidades.component";
 
 @Component({
   selector: 'app-dashboard',
-  imports: [HeaderComponent, TabelaClientesComponent, TituloTabelaComponent, GraficoStatusComponent],
+  imports: [HeaderComponent, TabelaClientesComponent, TituloTabelaComponent, GraficoStatusComponent, GraficoCidadesComponent],
   templateUrl: './dashboard.component.html',
   styleUrl: './dashboard.component.scss'
 })

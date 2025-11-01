@@ -101,7 +101,7 @@ export class ModalClienteComponent implements OnInit {
         setTimeout(() => {
           this.loading = false;
           this._dialogRef.close(true);
-          if (!this.modoEdicao) this._gerenteService.emitirAtualizacao();
+          this._gerenteService.emitirAtualizacao(); 
         }, 1000);
       },
       error: (err) => {
