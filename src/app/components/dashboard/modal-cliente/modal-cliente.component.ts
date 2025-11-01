@@ -22,7 +22,7 @@ import { ErroService } from '../../../services/erro/erro.service';
 export class ModalClienteComponent implements OnInit {
   formCliente!: FormGroup;
   modoEdicao = false;
-  loading: boolean = false;
+  loading = false;
 
   constructor(
     private _dialogRef: MatDialogRef<ModalClienteComponent>,

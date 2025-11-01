@@ -12,8 +12,8 @@
     <input matInput formControlName="nome" required maxlength="20" placeholder="Digite o Nome do cliente " />
 
     <input matInput formControlName="nomeDaEmpresa" required placeholder="Digite o nome da empresa" />
-    
-    <select id="ramoDaEmpresa" name="ramoDaEmpresa" required formControlName="ramoDaEmpresa" >
+
+    <select id="ramoDaEmpresa" name="ramoDaEmpresa" required formControlName="ramoDaEmpresa">
         <option value="" disabled selected hidden>Escolha o ramo da sua empresa</option>
         <option>Comércio</option>
         <option>Tecnologia</option>
@@ -29,7 +29,7 @@
         <option>Estética</option>
         <option>Outros</option>
     </select>
-    
+
     <input matInput formControlName="email" required maxlength="40" placeholder="Digite o e-mail" />
 
     <p-inputMask formControlName="telefone" mask="(99) 99999-9999" placeholder="(11) 98888-8888"
@@ -47,7 +47,9 @@
 
     <div class="botoes">
         <button mat-flat-button color="primary" type="submit" class="button-salvar">
-            {{ modoEdicao ? 'Salvar Alterações' : 'Cadastrar'}}
+            {{ loading
+            ? (modoEdicao ? 'Salvando alterações...' : 'Cadastrando...')
+            : (modoEdicao ? 'Salvar Alterações' : 'Cadastrar') }}
         </button>
         <button mat-stroked-button color="warn" type="button" class="button-cancelar" (click)="cancelar()">
             Cancelar
