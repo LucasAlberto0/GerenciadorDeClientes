@@ -42,6 +42,10 @@ body {
   height: 100%;
 }
 
+html {
+    scroll-behavior: smooth;
+}
+
 .font-quando {
   font-family: "Quando", serif;
   font-weight: 500;
@@ -80,3 +84,4 @@ body {
     background-color: #2BBDEE;
     border-radius: 10px;
 }
+
