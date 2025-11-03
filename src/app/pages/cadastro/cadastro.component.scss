@@ -12,7 +12,7 @@ main {
         align-items: center;
         gap: 25px;
         padding: 30px 40px;
-        box-shadow: 8px 8px 25px rgba(0, 0, 0, 0.3);
+        box-shadow: 8px 8px 25px var(--box-shadow-borrado);
         background-color: var(--fundo-form-login-cadastro);
         border-radius: 10px;
         max-width: 500px;

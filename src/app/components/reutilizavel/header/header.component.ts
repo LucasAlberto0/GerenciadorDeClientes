@@ -11,8 +11,8 @@ import { BotaoAzulComponent } from "../botao-azul/botao-azul.component";
 export class HeaderComponent {
   private _router = inject(Router)
 
-  @Input() textoBotao: string = 'Login';
-  @Input() rotaBotao: string = '/login';
+  @Input() textoBotao: string = 'Cadastrar';
+  @Input() rotaBotao: string = '/cadastro';
   @Input() localizacaoIcone: string = "img/icons/arrow-right-icon.svg"
 
   sair() {
