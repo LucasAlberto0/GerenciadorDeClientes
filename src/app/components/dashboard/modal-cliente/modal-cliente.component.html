@@ -1,5 +1,5 @@
 <p-toast />
-<form [formGroup]="formCliente" (ngSubmit)="salvar()" class=" form-container">
+<form [formGroup]="formCliente" (ngSubmit)="salvar()" class=" form-container" autocomplete="off">
     <div>
         <h2 class="font-quando-b" mat-dialog-title>
             {{modoEdicao ? 'Editar Cliente' : 'Criar Cliente'}}
@@ -9,7 +9,7 @@
         </p>
     </div>
 
-    <input matInput formControlName="nome" required maxlength="20" placeholder="Digite o Nome do cliente " />
+    <input matInput formControlName="nome" required maxlength="20" placeholder="Digite o Nome do cliente " type="text" autocomplete="off" pattern="[A-Za-z\s]*"/>
 
     <input matInput formControlName="nomeDaEmpresa" required placeholder="Digite o nome da empresa" />
 
@@ -35,7 +35,7 @@
     <p-inputMask formControlName="telefone" mask="(99) 99999-9999" placeholder="(11) 98888-8888"
         class="input-telefone"></p-inputMask>
 
-    <input matInput formControlName="cidade" required placeholder="Cidade do cliente" />
+    <input matInput formControlName="cidade" required placeholder="Cidade do cliente" type="text" />
 
     <select id="status" name="status" required formControlName="status">
         <option value="" disabled selected hidden>Escolha um status</option>

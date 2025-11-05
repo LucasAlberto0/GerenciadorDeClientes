@@ -1,5 +1,5 @@
 <p-toast />
-<form [formGroup]="formGerente" (ngSubmit)="salvar()" class=" form-container">
+<form [formGroup]="formGerente" (ngSubmit)="salvar()" class=" form-container" autocomplete="off">
     <div>
         <h2 class="font-quando-b" mat-dialog-title>
             Editar seu perfil
@@ -8,22 +8,22 @@
             Atualize os seus dados
         </p>
     </div>
-    <input matInput formControlName="nome" required maxlength="40" placeholder="Digite o nome completo" />
+    <input matInput formControlName="nome" required maxlength="40" placeholder="Digite o nome completo" type="text" pattern="[A-Za-z\s]*"/>
 
-    <input matInput formControlName="email" required maxlength="60" placeholder="Digite o e-mail" />
+    <input matInput formControlName="email" required maxlength="60" placeholder="Digite o e-mail" autocomplete="off"/>
 
-    <input matInput formControlName="empresa" required maxlength="60" placeholder="Digite o nome da empresa" />
+    <input matInput formControlName="empresa" required maxlength="60" placeholder="Digite o nome da empresa" autocomplete="off" />
     <div>
         <h3 class="font-quando-b" >Alterar senha (opcional)</h3>
         <small class="font-quando">Para trocar sua senha, preencha ambos os campos abaixo</small>
     </div>
 
     <p-floatlabel variant="in">
-                <p-password formControlName="senhaAtual" [toggleMask]="true" [feedback]="false" class="input-custom"  />
+                <p-password formControlName="senhaAtual" [toggleMask]="true" [feedback]="false" class="input-custom" autocomplete="off" />
                 <label for="over_label">Senha atual</label>
             </p-floatlabel>
     <p-floatlabel variant="in">
-                <p-password formControlName="novaSenha" [toggleMask]="true" class="input-custom" weakLabel="Muito simples" mediumLabel="Media" strongLabel="Forte" promptLabel="Digite a senha"/>
+                <p-password formControlName="novaSenha" [toggleMask]="true" class="input-custom" weakLabel="Muito simples" mediumLabel="Media" strongLabel="Forte" promptLabel="Digite a senha" autocomplete="off"/>
                 <label for="over_label">Senha nova</label>
                 <ng-template #header>
             <div class="font-semibold text-xm mb-4">Digite a senha</div>

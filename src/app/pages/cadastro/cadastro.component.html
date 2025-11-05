@@ -1,11 +1,11 @@
 <main>
     <p-toast/>
-    <form [formGroup]="cadastroForm" class="font-quando" data-aos="fade-up" data-aos-duration="1000">
+    <form [formGroup]="cadastroForm" class="font-quando" data-aos="fade-up" data-aos-duration="1000" autocomplete="off">
         <a href="/"><img src="img/logo.png" alt=""></a>
         <h1 class="font-quando-b">Cadastro</h1>
         <div class="inputs">
             <p-floatlabel variant="in">
-                <input formControlName="nome" pInputText id="in_label" autocomplete="off" />
+                <input formControlName="nome" pInputText id="in_label" autocomplete="off" type="text" pattern="[A-Za-z\s]*"/>
                 <label for="in_label">Seu nome</label>
             </p-floatlabel>
             <p-floatlabel variant="in">

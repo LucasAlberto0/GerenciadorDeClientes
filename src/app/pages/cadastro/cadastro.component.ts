@@ -101,6 +101,7 @@ export class CadastroComponent implements OnInit {
           detail: this._erroService.obterMensagem(),
           life: 4000
         });
+        this.load(0);
       }
     });
   }
