@@ -46,6 +46,10 @@ main {
     width: 100%;
 }
 
+.button-desabilitado{
+    pointer-events: none;
+}
+
 .botao-login ::ng-deep .p-button {
     width: 100%;
     background-color: var(--azul-principal);

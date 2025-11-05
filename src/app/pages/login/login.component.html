@@ -14,7 +14,7 @@
                 <label for="over_label">Senha</label>
             </p-floatlabel>
         </div>
-        <p-button [loading]="loading" (onClick)="load()" (click)="login()" label="Entrar" class="botao-login"/>
+        <p-button [loading]="loading" (onClick)="load()" (click)="login()" label="Entrar" class="botao-login" [ngClass]="{'button-desabilitado' : loading}"/>
         <a href="/cadastro">Ainda não possui conta?</a>
     </form>
 </main>

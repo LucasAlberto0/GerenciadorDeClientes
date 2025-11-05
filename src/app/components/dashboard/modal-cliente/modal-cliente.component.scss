@@ -106,6 +106,10 @@ form {
     background-color: var(--branco-principal);
 }
 
+.button-desabilitado{
+    pointer-events: none;
+}
+
 .input-telefone {
     ::ng-deep input {
         color: var(--preto);

@@ -31,7 +31,9 @@
             </p-floatlabel>
     
     <div class="botoes">
-        <button mat-flat-button color="primary" type="submit" class="button-salvar">
+        <button mat-flat-button color="primary" type="submit" class="button-salvar"
+        [ngClass]="{'button-desabilitado' : loading}"
+        >
             {{ loading ? 'Salvando...' : 'Salvar Alterações' }}
         </button>
         <button mat-stroked-button color="warn" type="button" class="button-cancelar" (click)="cancelar()">

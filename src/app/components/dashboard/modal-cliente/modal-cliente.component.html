@@ -46,7 +46,7 @@
 
 
     <div class="botoes">
-        <button mat-flat-button color="primary" type="submit" class="button-salvar">
+        <button mat-flat-button color="primary" type="submit" class="button-salvar" [ngClass]="{'button-desabilitado' : loading}">
             {{ loading
             ? (modoEdicao ? 'Salvando alterações...' : 'Cadastrando...')
             : (modoEdicao ? 'Salvar Alterações' : 'Cadastrar') }}

@@ -1,4 +1,4 @@
-import { Component, inject, OnInit } from '@angular/core';
+import { Component, CUSTOM_ELEMENTS_SCHEMA, inject, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, FormsModule, Validators, ReactiveFormsModule } from '@angular/forms';
 import { Router } from '@angular/router';
 import { ButtonModule } from 'primeng/button';
@@ -12,12 +12,14 @@ import { ToastModule } from 'primeng/toast';
 import { MessageService } from 'primeng/api';
 import { ErroService } from '../../services/erro/erro.service';
 import { SkeletonModule } from 'primeng/skeleton';
+
 @Component({
   selector: 'app-cadastro',
   imports: [ButtonModule, FormsModule, PasswordModule, FloatLabelModule, FloatLabel, InputTextModule, DividerModule, ReactiveFormsModule, ToastModule],
   templateUrl: './cadastro.component.html',
   styleUrl: './cadastro.component.scss',
-  providers: [MessageService, SkeletonModule]
+  providers: [MessageService, SkeletonModule],
+  schemas: [CUSTOM_ELEMENTS_SCHEMA]
 })
 export class CadastroComponent implements OnInit {
 
