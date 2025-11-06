@@ -11,8 +11,10 @@ article {
     cursor: pointer;
 
     h2 {
+        overflow: hidden;
+        text-overflow: ellipsis;
         transition: all ease 0.3s;
-
+        line-height: normal;
     }
 
     &:hover {

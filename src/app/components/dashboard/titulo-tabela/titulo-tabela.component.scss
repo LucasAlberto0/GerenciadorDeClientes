@@ -30,7 +30,6 @@ section {
             justify-content: start;
             gap: 20px;
 
-
             .total-de-clientes {
                 background-color: var(--branco-fundo);
                 padding: 20px;
@@ -67,14 +66,16 @@ section {
                 background-color: var(--branco-fundo);
                 padding: 20px;
                 display: flex;
-                width: 300px;
+                width: auto;
                 border-radius: 15px;
+                gap: 20px;
                 align-items: center;
                 justify-content: space-between;
                 border: 1px solid var(--cinza-border-box);
                 box-shadow: 5px 5px var(--box-shadow-animation);
                 cursor: pointer;
                 transition: all ease 0.4s;
+                max-width: 500px;
 
                 .espacamento-informacoes {
                     display: flex;
@@ -114,6 +115,8 @@ section {
                 }
 
                 h2 {
+                    overflow: hidden;
+                    text-overflow: ellipsis;
                     font-size: 1.5rem;
                     line-height: normal;
                 }
@@ -179,6 +182,19 @@ section {
     section {
         article {
             max-width: 600px;
+
+            .div-informacoes-conta {
+                flex-direction: column;
+                width: 100%;
+
+                .total-de-clientes {
+                    width: 100%;
+                }
+
+                .informacoes-conta {
+                    max-width: 100%;
+                }
+            }
 
             .titulo-e-subtitulo {
                 h1 {
@@ -271,6 +287,15 @@ section {
     section {
         article {
             max-width: 330px;
+
+            .div-informacoes-conta {
+                .informacoes-conta {
+                    h2 {
+                        white-space: nowrap;
+                        max-width: 180px;
+                    }
+                }
+            }
 
             .titulo-e-subtitulo {
                 h1 {
