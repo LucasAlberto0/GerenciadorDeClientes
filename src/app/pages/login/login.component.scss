@@ -64,15 +64,7 @@ p-password {
     width: 100%;
 }
 
-p-inputtext ::ng-deep .p-inputtext,
-p-password ::ng-deep .p-inputtext {
-    width: 100%;
-    border-radius: 8px;
-    border: 1px solid var(--cinza-border-box);
-    background-color: var(--branco-fundo);
-    font-size: 0.8rem;
-    transition: border-color 0.3s;
-}
+
 
 p-inputtext ::ng-deep .p-inputtext:focus,
 p-password ::ng-deep .p-inputtext:focus {
@@ -90,16 +82,6 @@ p-floatlabel ::ng-deep input.p-inputtext,
 p-floatlabel ::ng-deep .p-password-input {
     width: 100% !important;
     box-sizing: border-box;
-}
-
-p-floatlabel ::ng-deep input.p-inputtext,
-p-password ::ng-deep .p-inputtext {
-    border-radius: 8px;
-    border: 1px solid var(--cinza-border-box);
-    background-color: var(--branco-fundo);
-    font-size: 1rem;
-    transition: border-color 0.3s;
-
 }
 
 p-floatlabel ::ng-deep input.p-inputtext:focus,

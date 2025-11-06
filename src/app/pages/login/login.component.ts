@@ -28,6 +28,7 @@ export class LoginComponent implements OnInit {
   clickLogar: boolean = false;
   constructor(private _fb: FormBuilder, private _authService: AutenticacaoService, private _messageService: MessageService, private _erroService: ErroService) { }
   loading: Boolean = false;
+  submitted = false;
 
   ngOnInit(): void {
     this.loginForm = this._fb.group({
@@ -37,6 +38,8 @@ export class LoginComponent implements OnInit {
   }
 
   login() {
+    this.submitted = true;
+
     const form = this.loginForm;
     if (!form) return;
 
@@ -77,6 +80,7 @@ export class LoginComponent implements OnInit {
           detail: this._erroService.obterMensagem() || 'Credenciais inválidas. Tente novamente.',
           life: 3000,
         });
+        this.submitted = false;
         this.load(0);
       }
     });

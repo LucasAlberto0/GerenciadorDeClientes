@@ -5,12 +5,12 @@
         <h1 class="font-quando-b">Login</h1>
         <div class="inputs">
             <p-floatlabel variant="in"  >
-                <input formControlName="email"  pInputText id="in_label" autocomplete="off" />
+                <input formControlName="email"  pInputText id="in_label" autocomplete="off" [invalid]="submitted && loginForm.get('email')?.invalid" />
                 <label for="in_label">Email</label>
                 <div></div>
             </p-floatlabel>
             <p-floatlabel variant="in">
-                <p-password formControlName="senha" [toggleMask]="true" [feedback]="false" class="input-custom" />
+                <p-password formControlName="senha" [toggleMask]="true" [feedback]="false" class="input-custom" [invalid]="submitted && loginForm.get('senha')?.invalid" />
                 <label for="over_label">Senha</label>
             </p-floatlabel>
         </div>

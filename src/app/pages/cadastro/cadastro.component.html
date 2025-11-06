@@ -5,27 +5,27 @@
         <h1 class="font-quando-b">Cadastro</h1>
         <div class="inputs">
             <p-floatlabel variant="in">
-                <input formControlName="nome" pInputText id="in_label" autocomplete="off" type="text" pattern="[A-Za-z\s]*"/>
+                <input formControlName="nome" pInputText id="in_label" autocomplete="off" type="text" pattern="[A-Za-z\s]*" [invalid]="submitted && cadastroForm.get('nome')?.invalid"/>
                 <label for="in_label">Seu nome</label>
             </p-floatlabel>
             <p-floatlabel variant="in">
-                <input formControlName="email" pInputText id="in_label" autocomplete="off" />
+                <input formControlName="email" pInputText id="in_label" autocomplete="off" [invalid]="submitted && cadastroForm.get('email')?.invalid"/>
                 <label for="in_label">Email</label>
             </p-floatlabel>
             <p-floatlabel variant="in">
-                <input pInputText formControlName="empresa" id="in_label" autocomplete="off" />
+                <input pInputText formControlName="empresa" id="in_label" autocomplete="off" [invalid]="submitted && cadastroForm.get('empresa')?.invalid" />
                 <label for="in_label">Nome da sua empresa</label>
             </p-floatlabel>
 
             <p-floatlabel variant="in" >
-                <p-password formControlName="senha"  inputId="in_label" [toggleMask]="true" promptLabel="Digite a senha" weakLabel="Muito simples" mediumLabel="Media" strongLabel="Forte" />
+                <p-password formControlName="senha"  inputId="in_label" [toggleMask]="true" promptLabel="Digite a senha" weakLabel="Muito simples" mediumLabel="Media" strongLabel="Forte" [invalid]="submitted && cadastroForm.get('senha')?.invalid"/>
                 <label for="in_label">Senha</label>
                 <ng-template #header>
         </ng-template>
             </p-floatlabel>
 
             <p-floatlabel variant="in">
-                <p-password formControlName="confirmarSenha" [toggleMask]="true" [feedback]="false" class="input-custom" />
+                <p-password formControlName="confirmarSenha" [toggleMask]="true" [feedback]="false" class="input-custom" [invalid]="submitted && cadastroForm.get('confirmarSenha')?.invalid"/>
                 <label for="over_label">Repetir a senha</label>
             </p-floatlabel>
         </div>

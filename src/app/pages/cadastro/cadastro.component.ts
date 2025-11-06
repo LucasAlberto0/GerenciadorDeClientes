@@ -27,6 +27,7 @@ export class CadastroComponent implements OnInit {
   value!: string | undefined;
   private _router = inject(Router);
   loading: boolean = false;
+  submitted = false;
 
   constructor(
     private _fb: FormBuilder,
@@ -54,6 +55,8 @@ export class CadastroComponent implements OnInit {
   }
 
   cadastrar() {
+    this.submitted = true;
+
     const formCadastro = this.getCadastro();
     if (!formCadastro) return;
 
@@ -104,6 +107,7 @@ export class CadastroComponent implements OnInit {
           life: 4000
         });
         this.load(0);
+        this.submitted = false;
       }
     });
   }
