@@ -5,15 +5,20 @@ section{
     max-height: 650px;
     article{
         border-radius: 20px;
-        padding: 30px 20px;
+        padding: 8px 5px;
         margin-bottom: 30px;
-        overflow-y: auto;
         max-height: 650px;
         max-width: 1200px;
         width: 100%;
         background-color: var(--branco-fundo);
         border: 1px solid var(--cinza-border-box);
         box-shadow: 5px 5px var(--box-shadow-animation);
+
+        .scroll-div{
+            padding: 20px;
+            overflow-y: auto;
+            height: 100%;
+        }
         .div-titulo-da-tabela{
             display: flex;
             justify-content: space-between;

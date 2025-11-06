@@ -1,5 +1,6 @@
 <section>
     <article data-aos="zoom-in" data-aos-duration="1500">
+        <div class="scroll-div">
         <div class="div-titulo-da-tabela">
             <h2 class="font-quando-b">Lista de Clientes</h2>
             <app-botao-azul (clicado)="abrirModal()" icone="img/icons/plus-icon.svg" texto="Criar Cliente" />
@@ -11,8 +12,8 @@
                 }
             }@else {
                 <p-skeleton height="2rem" width="100%" class="mb-2"/>
-            }
+            }    
 
-        </div>
+        </div></div>
     </article>
 </section>
