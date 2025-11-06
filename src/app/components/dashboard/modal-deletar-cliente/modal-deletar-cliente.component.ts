@@ -1,22 +1,25 @@
-import { Component } from '@angular/core';
+import { Component, EventEmitter, Input, Output } from '@angular/core';
 import { Dialog } from 'primeng/dialog';
-import { ButtonModule } from 'primeng/button';
-import { InputTextModule } from 'primeng/inputtext';
-import { AvatarModule } from 'primeng/avatar';
-import { CommonModule } from '@angular/common';
 
 @Component({
   selector: 'app-modal-deletar-cliente',
-  imports: [Dialog, ButtonModule, InputTextModule, AvatarModule, CommonModule],
+  imports: [Dialog],
   templateUrl: './modal-deletar-cliente.component.html',
   styleUrl: './modal-deletar-cliente.component.scss',
 
 })
 export class ModalDeletarClienteComponent {
+  @Input() visible: boolean = false;
+  @Output() visibleChange = new EventEmitter<boolean>();
+  @Output() confirmar = new EventEmitter<void>();
 
+  fechar() {
+    this.visible = false;
+    this.visibleChange.emit(this.visible);
+  }
 
-
-  visible: boolean = true;
-
-
+  confirmarDelecao() {
+    this.confirmar.emit();
+    this.fechar();
+  }
 }

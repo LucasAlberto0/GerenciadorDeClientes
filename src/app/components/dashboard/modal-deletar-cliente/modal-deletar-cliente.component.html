@@ -1,18 +1,14 @@
-
-<p-dialog [(visible)]="visible" [modal]="true" [style]="{ width: '25rem' }">
-    
+<p-dialog [(visible)]="visible" [modal]="true" [style]="{ width: '25rem' }" [appendTo]="'body'">
     <ng-template #header>
-            <div class="header ">
-                <img src="img/icons/delete-icon.svg" alt="">
-            </div>
-        </ng-template>
+        <div class="header ">
+            <img src="img/icons/delete-icon.svg" alt="">
+        </div>
+    </ng-template>
     <section>
-        
-
-    <h3 class="font-quando-b">Deseja deletar o usuário?</h3>
-    <div class="div-button">
-    <button class="button-deletar font-quando">Deletar</button>
-    <button (click)="visible = false" class="button-cancelar font-quando">Cancelar</button>
-    </div>
-</section>
+        <h3 class="font-quando-b">Deseja deletar o usuário?</h3>
+        <div class="div-button">
+            <button class="button-deletar font-quando" (click)="confirmarDelecao()">Deletar</button>
+            <button class="button-cancelar font-quando" (click)="fechar()">Cancelar</button>
+        </div>
+    </section>
 </p-dialog>

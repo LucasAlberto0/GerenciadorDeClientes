@@ -1,9 +1,16 @@
+<app-modal-deletar-cliente [(visible)]="modalDeletarVisivel"
+    (confirmar)="confirmarDelecao()"/>
 <article class="card-animacao">
     <h2>{{cliente?.nome}}</h2>
     <div class="titulo-empresa"><img src="img/icons/empresa-icon.svg" alt="">
-        <p>{{cliente?.nomeDaEmpresa}}</p> 
+        <p>{{cliente?.nomeDaEmpresa}}</p>
     </div>
-    <div class="ramo-e-status"><p class="ramo">{{cliente?.ramoDaEmpresa}}</p> <p [ngClass]="{'status-ativo': cliente?.status === 'Ativo', 'status-negociacao': cliente?.status === 'Em Negociação', 'status-inativo': cliente?.status === 'Inativo' }">{{cliente?.status}}</p></div>
+    <div class="ramo-e-status">
+        <p class="ramo">{{cliente?.ramoDaEmpresa}}</p>
+        <p
+            [ngClass]="{'status-ativo': cliente?.status === 'Ativo', 'status-negociacao': cliente?.status === 'Em Negociação', 'status-inativo': cliente?.status === 'Inativo' }">
+            {{cliente?.status}}</p>
+    </div>
     <aside div="div-campos-do-usuario">
         <div class="div-campo">
             <div class="fundo-img"><img src="img/icons/email-icon.svg" alt=""></div>
@@ -20,7 +27,8 @@
         <div class="div-button">
             <button class="button-editar" (click)="editar.emit(cliente)"><img src="img/icons/edit-icon.svg"
                     alt="">Editar</button>
-            <button class="button-excluir" (click)="abrirModalEdicao()"><img src="img/icons/delete-icon.svg" alt="">Excluir</button>
+            <button class="button-excluir" (click)="abrirModalDeletar()"><img src="img/icons/delete-icon.svg"
+                    alt="">Excluir</button>
         </div>
     </aside>
 </article>
